@@ -1,0 +1,198 @@
+// padrões iniciais
+html {
+  font-family: $font-default;
+  font-size: 10px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-default;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color: $primary;
+  // largura máxima para telas full HD
+  // max-width: 1920px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// tira o focus de todos os elementos
+*:focus {
+  outline: none;
+}
+
+// define largura máxima para telas de largura FullHD
+main {
+  // max-width: 1920px;
+  margin: 0 auto;
+}
+
+section {
+  position: relative;
+}
+
+strong {
+  font-style: normal;
+  font-weight: 900;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+// h2 {
+//     font-style: normal;
+//     font-weight: 600;
+//     font-size: 5.8rem;
+//     line-height: 7.2rem;
+//     color: #d29e7e;
+// }
+// Mixins
+@mixin box-i($position: absolute, $height: 100%) {
+  display: block;
+  width: 100%;
+  height: $height;
+  position: $position;
+  top: 0;
+  left: 0;
+}
+
+.filtro-black {
+  @include box-i();
+  z-index: 2;
+  background: #2d1505;
+  opacity: 0.4;
+}
+
+@mixin gap-padrao($t: 45px, $r: 15px, $b: 45px, $l: 15px) {
+  padding: $t $r $b $l;
+}
+
+// monta gap padrão para padding das sections
+.gap-padrao {
+  @include gap-padrao();
+}
+
+// Container deslizante no mobile
+.container-slidescroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+}
+
+// Mostra esconde na versão mobile
+.v-mobile {
+  display: block !important;
+}
+
+.v-desktop {
+  display: none !important;
+}
+
+.volta-topo {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  // Mostra esconde na versão Desktop
+  .v-mobile {
+    display: none !important;
+  }
+  .v-desktop {
+    display: block !important;
+  }
+  // monta gap padrão para padding das sections
+  .gap-padrao {
+    @include gap-padrao(110px, 30px, 110px, 30px);
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  // Container deslizante no mobile
+  .container-slidescroll {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .volta-topo {
+    color: grey;
+    font-family: $font-default;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px 16px;
+    position: fixed;
+    right: 1%;
+    bottom: 50%;
+    z-index: 10;
+    mix-blend-mode: difference;
+  }
+  .volta-topo:hover {
+    color: grey;
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+// 991px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

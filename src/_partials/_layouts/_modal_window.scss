@@ -1,0 +1,116 @@
+// .show_hide {
+//   display: block !important;
+// }
+
+// .modal_box {
+//   width: 600px;
+//   overflow-x: auto;
+//   margin: auto;
+//   padding: 15px;
+//   background-color: #abb1b3;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   box-shadow: 0 0 20px 0px #0000009e;
+//   display: none;
+//   z-index: 2;
+//   text-align: center;
+// }
+
+// .modal_close {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   padding: 10px;
+//   cursor: pointer;
+//   line-height: 6px;
+//   font-size: 16px;
+// }
+
+// .overlay_modal {
+//   height: 100%;
+//   width: 100%;
+//   background-color: #0000001c;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   display: none;
+//   z-index: 1;
+// }
+
+// .modal_box .video-container {
+//   position: relative;
+//   width: 100%;
+//   padding-bottom: 56.25%;
+// }
+
+// p {
+//   margin-bottom: 15px;
+//   text-align: center;
+// }
+
+// .video-container .youtube_video {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   border: 0;
+// }
+
+// #modal_btn {
+//   background-image: linear-gradient(
+//     to right,
+//     #314755 0%,
+//     #26a0da 51%,
+//     #314755 100%
+//   );
+// }
+
+// #modal_btn {
+//   margin: 15px auto;
+//   padding: 10px 50px;
+//   text-align: center;
+//   text-transform: uppercase;
+//   transition: 0.5s;
+//   background-size: 200% auto;
+//   color: white;
+//   box-shadow: 0 0 20px #eee;
+//   border-radius: 10px;
+//   display: block;
+//   border: 1px solid #00000085;
+//   cursor: pointer;
+// }
+
+// #modal_btn:hover {
+//   background-position: right center;
+//   color: #fff;
+//   text-decoration: none;
+// }
+
+// @media only screen and (max-width: 1200px) {
+//   .container {
+//     max-width: 750px;
+//   }
+// }
+
+// @media only screen and (max-width: 450px) {
+//   .container {
+//     max-width: 380px;
+//   }
+//   .modal_box {
+//     width: calc(100% - 50px);
+//   }
+//   .title {
+//     font-size: 1.5rem;
+//   }
+// }
+
+// @media only screen and (max-width: 400px) {
+//   .container {
+//     max-width: 350px;
+//   }
+// }

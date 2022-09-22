@@ -1,0 +1,63 @@
+/* Home */
+
+//Hero
+.jumbotron {
+  @extend .d-flex;
+  // pega altura da tela menos altura do menu do topo
+  height: calc(100vh - 57px);
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: flex-end;
+  border-radius: 0;
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(sm) {
+}
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(md) {
+  //REMOVE ESPAÇO PARA SCROLLBAR EM TELAS MAIORES//
+  body.modal-open,
+  .modal-open .navbar-fixed-top,
+  .modal-open .navbar-fixed-bottom {
+    margin-right: -15px !important;
+  }
+}
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(lg) {
+  //Hero
+  .jumbotron {
+    background-color: $dark;
+    // pega altura da tela menos altura do menu do topo
+    height: calc(100vh - 83px);
+  }
+}
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+@include media-breakpoint-up(xl) {
+}
+// 1200px

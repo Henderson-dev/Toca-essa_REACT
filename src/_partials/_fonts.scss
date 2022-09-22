@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "Gordita";
+  src: url("../fonts/Gordita-BoldItalic.woff2") format("woff2"),
+    url("../fonts/Gordita-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src: url("../fonts/Gordita-Black.woff2") format("woff2"),
+    url("../fonts/Gordita-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src: url("../fonts/Gordita-Regular.woff2") format("woff2"),
+    url("../fonts/Gordita-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src: url("../fonts/Gordita-Bold.woff2") format("woff2"),
+    url("../fonts/Gordita-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mirador";
+  src: url("../fonts/Mirador-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Mirador-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mirador";
+  src: url("../fonts/Mirador-Black.woff2") format("woff2"),
+    url("../fonts/Mirador-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mirador";
+  src: url("../fonts/Mirador-Book.woff2") format("woff2"),
+    url("../fonts/Mirador-Book.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

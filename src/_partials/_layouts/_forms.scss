@@ -1,0 +1,95 @@
+// Padrao de formularios
+// Use a classe form-default para stilizar os campos de formulário
+.form-default {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.02em;
+    color: $dark;
+    min-width: initial;
+    width: 100%;
+    padding: 14px 27px;
+    background: $white;
+    border-radius: 100px;
+    border: none;
+  }
+  textarea {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.02em;
+    color: $dark;
+    height: 180px;
+    min-width: initial;
+    width: 100%;
+    padding: 14px 27px;
+    background: $white;
+    border-radius: 35px;
+    border: none;
+    margin-bottom: 30px;
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  // Padrao de formularios
+  .form-padrao {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      min-width: 445px;
+    }
+    textarea {
+      min-width: 445px;
+    }
+  }
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

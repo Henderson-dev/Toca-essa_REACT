@@ -1,0 +1,97 @@
+.economia {
+  background: $secondary;
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 60px 73px 60px;
+
+    h2 {
+      margin-bottom: 42px;
+      font-size: 36px;
+      line-height: 43px;
+      font-family: $font-titles;
+    }
+    p {
+      line-height: 24px;
+    }
+  }
+  .economia-foto {
+    position: relative;
+    height: 344px;
+
+    img {
+      height: 383px;
+      position: absolute;
+      top: -39px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .economia {
+    article {
+      padding: 52px 0px 30px 0px;
+      h2 {
+        font-size: 48px;
+        line-height: 58px;
+      }
+    }
+    .economia-foto {
+      height: 553px;
+      img {
+        height: 605px;
+        top: -52px;
+      }
+    }
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

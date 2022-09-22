@@ -1,0 +1,122 @@
+.equipe {
+  padding: 31px 0px 70px;
+
+  h2 {
+    font-family: $font-titles;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 150%;
+    margin-bottom: 50px;
+  }
+  .container-equipe {
+    min-width: 100vw;
+    display: flex;
+    overflow-x: auto;
+  }
+  .card-equipe {
+    min-width: 255px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: top;
+      // height: 255px;
+      height: 355px;
+
+      margin-bottom: 30px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+    h3 {
+      font-family: $font-titles;
+      font-weight: 700;
+      font-size: 22px;
+      line-height: 150%;
+      margin-bottom: 22px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+  .equipe {
+    .card-equipe {
+      min-width: 400px;
+    }
+  }
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .equipe {
+    .card-equipe {
+      min-width: 500px;
+    }
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  .equipe {
+    padding: 55px 165px 110px;
+    .container-equipe {
+      min-width: auto;
+      display: block;
+    }
+    .card-equipe {
+      min-width: none;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      img {
+        // height: 300px;
+
+        margin-bottom: 0px;
+      }
+      h3 {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

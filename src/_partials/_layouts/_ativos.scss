@@ -1,0 +1,143 @@
+.ativos {
+  background-color: black;
+  article {
+    color: white;
+    padding: 65px 37px 66px 22px;
+
+    h2 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 30px;
+      font-family: $font-titles;
+    }
+    h3 {
+      font-size: 24px;
+      font-weight: Bold;
+      margin-bottom: 15px;
+      font-family: $font-titles;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+  }
+  .ativos-foto {
+    position: relative;
+    height: 325.35px;
+
+    img {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100vw;
+      height: 325.35px;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+  .botoesContainer {
+    display: flex;
+    justify-content: space-between;
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+    a:first-child {
+      margin-right: 11px;
+      @media (min-width: 768px) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  .ativos {
+    article {
+      padding: auto 0px auto 0px;
+      h2 {
+        max-width: 390px;
+      }
+    }
+
+    .ativos-foto {
+      height: 508px;
+
+      img {
+        -webkit-mask-image: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+        mask-image: linear-gradient(
+          to left,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1)
+        );
+        transform: translate(0%, 0%);
+        top: 0;
+        left: auto;
+        right: 0px;
+        bottom: 0;
+        object-fit: none;
+        width: 743px;
+        min-width: auto;
+        height: 508px;
+      }
+    }
+
+    .botoesContainer {
+      justify-content: flex-start;
+      a:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

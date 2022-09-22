@@ -1,0 +1,149 @@
+/* Header */
+
+//Menu Principal
+.main-menu {
+  @extend .navbar, .navbar-expand-lg, .navbar-dark, .w-100;
+  transition: all 0.2s ease-in-out;
+  // padding: 5px 20px 5px 20px;
+  // .navbar-brand {
+  //   z-index: 2;
+  //   //
+  // }
+  .navbar-nav {
+    li {
+      .a-link {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 140%;
+        color: $primary;
+      }
+    }
+  }
+  // .hamburger {
+  //   padding: 0;
+  //   z-index: 2;
+  // }
+  button:focus {
+    outline: none;
+  }
+  //Important: integrating hamburger icon with bootstrap navbar
+  button[aria-expanded="true"] {
+    @extend .is-active;
+  }
+  // classes para o menu mobile aberto
+  .navbar-collapse {
+    // padding-top: 90px;
+    &.show {
+      height: 100vh;
+
+      .navbar-nav {
+        &:nth-child(2) {
+          .nav-item:first-child {
+            padding-right: 30px;
+          }
+        }
+      }
+    }
+  }
+  // .nav-item {
+  //   font-size: 2.6rem;
+  // }
+  .navbar-nav:first-child {
+    // margin-top: 40vh;
+  }
+  //Menu slim
+  // &.scrolled{
+  //   position: fixed;
+  //   background-color: $azul_escuro;
+  //   top: 0;
+  //   padding: 5px 20px 5px 20px;
+  //   z-index: 2;
+  //   .navbar-brand{
+  //     padding: 0;
+  //     img{
+  //       width: 114px;
+  //       filter: brightness(0) invert(1);
+  //       transition: .3s ease;
+  //     }
+  //   }
+  //   .hamburger{
+  //     margin-top: 3px;
+  //   }
+  // }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .main-menu {
+    .navbar-brand img {
+      // width: 184.02px;
+      // height: 67.02px;
+    }
+    .navbar-collapse {
+      padding-top: 0;
+    }
+    .nav-item {
+      // font-size: 1.8rem;
+      // padding-right: 25px;
+      align-items: center;
+    }
+    .navbar-nav:first-child {
+      margin-bottom: 0;
+    }
+    .navbar-nav {
+    }
+    //Menu slim
+    // &.scrolled {
+    //   .navbar-brand {
+    //     img {
+    //       width: 100px;
+    //     }
+    //   }
+    // }
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  //
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

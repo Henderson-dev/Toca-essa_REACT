@@ -1,0 +1,204 @@
+/* Footer */
+
+footer {
+  background-color: $primary;
+  padding: 35px 16px 25px 32px;
+
+  p {
+    color: $branco;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  span,
+  a {
+    color: $secondary;
+  }
+  a:hover {
+    text-decoration: none;
+    color: $secondary;
+  }
+
+  .footer-coluna_topo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .footer-logo {
+    margin-top: 0px;
+
+    margin-bottom: 50px;
+  }
+  .footer-texto {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 35px;
+    span {
+      margin-right: 14px;
+    }
+  }
+  ul {
+    li {
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        margin-right: 10px;
+
+        color: $secondary;
+      }
+    }
+  }
+  .footer-icons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+    p {
+      margin-right: 14px;
+    }
+  }
+  .footer-icons-social {
+    display: flex;
+    align-items: flex-start;
+
+    margin-top: -12px;
+
+    a {
+      padding: 0px;
+      margin-right: 25px;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+  .footer-politica {
+    margin-bottom: 40px;
+    display: flex;
+
+    align-items: flex-end;
+    .footer-politica-modal {
+      display: flex;
+
+      align-items: center;
+      white-space: nowrap;
+      &:hover {
+        opacity: 0.8;
+      }
+      a {
+        width: 160px;
+        margin-right: 0px;
+      }
+      svg {
+        margin-bottom: 0px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .modalPolitica {
+    background: linear-gradient(
+      100.58deg,
+      rgba(255, 246, 18, 0.5) 21.99%,
+      rgba(138, 255, 177, 0.5) 80.7%
+    );
+    color: $branco;
+
+    h5 {
+      font-family: $font-titles;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 5px 15px 0px;
+    }
+    article {
+      padding: 5px 15px;
+      p {
+        font-family: $font-default;
+        font-size: 14px;
+      }
+    }
+    .modal-contentCustom {
+      background: $primary;
+    }
+  }
+  .footer-calebe {
+    margin-bottom: 0px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+/*
+=====================================================
+Small devices (landscape phones, 576px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(sm) {
+}
+
+// 576px
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  footer {
+    padding: 111px 16px 29px;
+    .footer-logo {
+      margin-top: -22px;
+    }
+
+    .footer-calebe {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  footer {
+    .footer-icons-social {
+      margin-bottom: 0px;
+      margin-left: 15px;
+    }
+    .footer-politica {
+      align-items: flex-start;
+      margin-bottom: 0px;
+
+      .footer-politica-modal {
+        display: flex;
+        align-items: center;
+        margin-left: 39%;
+      }
+    }
+    .footer-calebe {
+      margin-left: 65%;
+    }
+  }
+}
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+}
+
+// 1200px

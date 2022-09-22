@@ -1,0 +1,147 @@
+.produtos {
+  background-color: $secondary;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .container-custom {
+    @media (max-width: 768px) {
+      max-width: none;
+      margin: 0;
+    }
+  }
+
+  article {
+    margin: 0;
+    padding: 40px 60px 0px 50px;
+    margin-bottom: 28px;
+  }
+  h2 {
+    max-width: 350px;
+    font-family: $font-titles;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 34px;
+    text-align: left;
+    font-style: bold;
+    font-weight: 700;
+  }
+  p {
+    line-height: 24px;
+  }
+
+  .produtos-foto {
+    img {
+      margin-left: -20px;
+      margin-bottom: 0px;
+      width: 110%;
+    }
+  }
+}
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .produtos {
+    article {
+      padding: 50px 50px 0px 0px;
+
+      h2 {
+        text-align: left;
+        line-height: 54px;
+        margin-bottom: 65px;
+        font-weight: 900;
+      }
+    }
+    .produtos-foto {
+      margin-right: 0px;
+      padding-right: 0px;
+      position: relative;
+      height: 550px;
+
+      img {
+        height: 571.5px;
+        width: auto;
+        position: absolute;
+        margin-bottom: 0px;
+        left: -370px;
+        bottom: -1px;
+      }
+    }
+  }
+}
+
+// 768px
+
+/*
+=====================================================
+Large devices (desktops, 992px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(lg) {
+  .produtos {
+    article {
+      margin-right: 60px;
+
+      h2 {
+        white-space: nowrap;
+        margin-bottom: 72px;
+      }
+    }
+    .produtos-foto {
+      img {
+        left: -230px;
+      }
+    }
+  }
+}
+
+// 992px
+
+/*
+=====================================================
+Extra large devices (large desktops, 1200px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(xl) {
+  .produtos {
+    // article {
+    //   max-width: 420px;
+    //   margin-right: 5vw;
+    // }
+    .produtos-foto {
+      img {
+        left: -175px;
+      }
+    }
+  }
+  @media (min-width: 1450px) {
+    .produtos-foto {
+      img {
+        -webkit-mask-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 20%
+        );
+        mask-image: linear-gradient(
+          to Right,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 30%
+        );
+      }
+    }
+  }
+}
+
+// 1200px

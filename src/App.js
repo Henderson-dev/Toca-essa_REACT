@@ -2,7 +2,9 @@ import React from "react";
 import './App.css';
 import useFetch from "./backend/useFetch";
 import MensageScreen from "./components/MensageScreen";
-//import { Container } from 'reactstrap';
+import {Button, Alert, Container, Row} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./components/Header";
 
 function App(props) {
 
@@ -20,8 +22,13 @@ function App(props) {
     <MensageScreen msg="Sem conexão com a API" error={error.response} />
   ) : (
     <>
+      <Header />
       <div>
         <h1>Api carregada com sucesso</h1>
+        <Alert variant="primary">exemplo</Alert>
+        <Button variant="danger">Teste</Button>
+        https://www.youtube.com/watch?v=3UVSU9XHUMI
+        https://react-bootstrap.github.io/
       </div>
     </>
   );
