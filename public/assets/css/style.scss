@@ -9,15 +9,16 @@ Author E-mail: teconet.arte@gmail.com
 */
 
 // Variavéis de configuração do bootstrap (tem que ser antes do bootstrap)
-@import "../../src/_partials/variables";
+@import "../../../src/_partials/variables";
 // // Bootstrap
-// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 // Hamburges Icon Menu
 // @import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 // AOS Animation
 //@import "../../node_modules/aos/src/sass/aos.scss";
 
 // Globals
-@import "../../src/_partials/globals";
+@import "../../../src/_partials/globals";
 
 // Layouts
+@import "../../../src/_partials/_layouts/header";
