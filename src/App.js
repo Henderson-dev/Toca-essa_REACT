@@ -25,13 +25,6 @@ function App(props) {
     <>
       <Header />
       <Hero></Hero>
-      <div>
-        <h1>Api carregada com sucesso</h1>
-        <Alert variant="primary">exemplo</Alert>
-        <Button variant="danger">Teste</Button>
-        https://www.youtube.com/watch?v=3UVSU9XHUMI
-        https://react-bootstrap.github.io/
-      </div>
     </>
   );
 }

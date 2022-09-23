@@ -49,13 +49,27 @@ ul {
   padding: 0;
 }
 
-// h2 {
-//     font-style: normal;
-//     font-weight: 600;
-//     font-size: 5.8rem;
-//     line-height: 7.2rem;
-//     color: #d29e7e;
-// }
+
+.btn-default{
+  position: relative;
+  display: block;
+  height: 61px;
+  padding: 18px 45px 20px;
+  width: fit-content;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;  
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.btn-white{
+  background: #FFFFFF;
+  color: $primary;
+}
+
 // Mixins
 @mixin box-i($position: absolute, $height: 100%) {
   display: block;
