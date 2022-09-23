@@ -1,49 +1,12 @@
-.gradient {
-  background: linear-gradient(190.58deg, #fff612 21.99%, #8affb1 80.7%);
-}
-
-.hero {
-  position: relative;
-  // min-height: 632px;
-  .container-custom {
-    padding: 60px 32px 0px;
-  }
-
-  h1 {
-    font-family: $font-titles;
-    margin-bottom: 44px;
-    font-size: 36px;
-    font-weight: 900;
-    white-space: nowrap;
-
-    span {
-      text-align: right;
-      padding-left: 100px;
-      font-weight: 400;
-    }
-    span::before {
-      content: "\a   ";
-      white-space: pre;
-    }
-  }
-  p {
-    font-size: 16px;
-    font-weight: 400px;
-    line-height: 24px;
-  }
-  .hero-primeiroTexto {
-    margin-bottom: 200px;
-  }
-  .hero-segundoTexto {
-    margin-bottom: 30px;
-  }
-  .hero-image {
-    margin-top: -150px;
-    img {
-      margin-left: 0px;
-      max-width: 130vw;
-    }
-  }
+.hero{
+  display: block;
+  width: 100%;
+  height: calc(100vh - 35px);
+  background: linear-gradient(246.13deg, #EC008C -44.06%, #472F92 81.88%);
+  mix-blend-mode: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /*
@@ -54,15 +17,8 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(sm) {
-  .hero {
-    .hero-image {
-      img {
-        max-width: 120vw;
-      }
-    }
-  }
-}
 
+}
 // 576px
 
 /*
@@ -73,32 +29,10 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(md) {
-  .gradient {
-    background: linear-gradient(100.58deg, #fff612 21.99%, #8affb1 80.7%);
-  }
-  .hero {
-    h1 {
-      font-size: 59px;
-    }
-    .hero-primeiroTexto {
-      margin-bottom: 30px;
-    }
-    .hero-segundoTexto {
-      padding-top: 30px;
-      margin-bottom: 120px;
-    }
-    .hero-image {
-      position: absolute;
-      height: 450px;
-      left: 50vw;
-      bottom: 140px;
-      img {
-        max-width: 80vw;
-      }
-    }
+  .hero{
+    height: calc(100vh - 52px);
   }
 }
-
 // 768px
 
 /*
@@ -109,13 +43,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(lg) {
-  .hero {
-    .hero-image {
-      bottom: 240px;
 
-      left: 55vw;
-    }
-  }
 }
 
 // 992px
@@ -128,16 +56,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(xl) {
-  .hero {
-    .hero-image {
-      bottom: 190px;
 
-      left: 52vw;
-      img {
-        max-height: 632px;
-      }
-    }
-  }
 }
 
 // 1200px

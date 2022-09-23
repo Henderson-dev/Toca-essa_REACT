@@ -3,8 +3,9 @@ import './App.css';
 import useFetch from "./backend/useFetch";
 import MensageScreen from "./components/MensageScreen";
 import {Button, Alert, Container, Row} from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App(props) {
 
@@ -23,6 +24,7 @@ function App(props) {
   ) : (
     <>
       <Header />
+      <Hero></Hero>
       <div>
         <h1>Api carregada com sucesso</h1>
         <Alert variant="primary">exemplo</Alert>

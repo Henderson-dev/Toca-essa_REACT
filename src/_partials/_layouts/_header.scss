@@ -1,24 +1,24 @@
 header{
   display: block;
-  height: 52px;
+  height: 35px;
   background-color: $purple;
   ul{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     li{
-      margin-right: 77px;
+      margin-right: 18px;
       a{
         display: block;
-        height: 52px;
-        padding-top: 25px;
+        height: 35px;
+        padding-top: 14px;
         font-family: $font-default;
         font-style: normal;
         font-weight: 700;
         font-size: 12px;
         line-height: 150%;
         color: $white;
-        letter-spacing: 0.1em;
+        letter-spacing: 0;
         text-transform: uppercase;
         text-decoration: none;
         transition: all .2s ease-in-out;
@@ -30,7 +30,7 @@ header{
     li:last-child{
       background-color: $pink;
       a{
-        padding: 25px 74px 0 74px;
+        padding: 14px 20px 0 20px;
         &:hover{
           color: $purple;
         }        
@@ -38,3 +38,34 @@ header{
     }
   }
 }
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+
+  header{
+    height: 52px;
+    ul{
+      li{
+        margin-right: 77px;
+        a{
+          height: 52px;
+          padding-top: 25px;
+          font-size: 12px;
+        }
+      }
+      li:last-child{
+        a{
+          padding: 25px 74px 0 74px;       
+        }
+      }
+    }
+  }
+
+}
+// 768px
