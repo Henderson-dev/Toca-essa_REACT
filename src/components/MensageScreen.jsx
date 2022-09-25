@@ -1,8 +1,5 @@
 import React from "react";
 
-// Errors Axios mensages
-// https://axios-http.com/docs/handling_errors
-
 export default function MensageScreen({ msg, error }) {
   return (
     <section className="container-error">
