@@ -2,7 +2,6 @@ import React from "react";
 import './App.css';
 import useFetch from "./backend/useFetch";
 import MensageScreen from "./components/MensageScreen";
-import {Button, Alert, Container, Row} from "react-bootstrap";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
