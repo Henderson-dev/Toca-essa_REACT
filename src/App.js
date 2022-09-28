@@ -1,13 +1,15 @@
 import React from "react";
-import './App.css';
+import "./App.css";
 import useFetch from "./backend/useFetch";
 import MensageScreen from "./components/MensageScreen";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App(props) {
-
   // Call API page ID in Wordpress
   let pathApiData = "evento/36";
 
@@ -22,6 +24,12 @@ function App(props) {
     <MensageScreen msg="Sem conexão com a API" error={error.response} />
   ) : (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/como-funciona" element={<About />} />
+        </Routes>
+      </BrowserRouter>
       <Header />
       <Hero></Hero>
     </>

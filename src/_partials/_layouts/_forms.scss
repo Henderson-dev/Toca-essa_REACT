@@ -153,7 +153,6 @@
     }
   }
 
-
   // Wrap para Radio e Check buttons
   .check-form {
     display: flex;
@@ -183,6 +182,21 @@
     // margin-top: 10px;
     margin-bottom: 15px;
     margin-right: 25px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: $primary;
+    }
+    &:hover input[type="radio"] + span:before {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      top: 1px;
+      background: $primary;
+      border: 4px solid #fff;
+      -webkit-box-shadow: 0 0 4px #000;
+      box-shadow: 0px 0px 4px #000;
+    }
   }
 
   // Radio buttom
