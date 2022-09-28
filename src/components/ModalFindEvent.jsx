@@ -1,9 +1,12 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
+import {React, useState}  from 'react'
 import Modal from 'react-bootstrap/Modal';
 
 
 export default function ModalFindEvent(props) {
+
+  const [showGeoloc, setshowGeoloc] = useState(false);
+  const showOrHideGeoloc = () => setshowGeoloc(true);
+
   return (
     <Modal
       {...props}
@@ -14,10 +17,20 @@ export default function ModalFindEvent(props) {
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
       <h2>Localizar um evento</h2>
+
+      { showGeoloc ?
+      
+      <>
+        <p>Pela geo</p>
+        <button onClick={showOrHideGeoloc}>Voltar</button>
+      </>
+      
+      : 
+
       <div className="form-default">
         <div className="wrap-check">
           <div className="check-form">
-            <label>
+            <label onClick={showOrHideGeoloc}>
               <input
                 type="radio"
                 name="localizacao"
@@ -43,10 +56,12 @@ export default function ModalFindEvent(props) {
               <span className="wpcf7-list-item-label">
                 Pelo nome do artista ou banda
               </span>
-            </label>          
+            </label>
+            
           </div>
         </div>
       </div>
+       }
       </Modal.Body>
     </Modal>
   )
