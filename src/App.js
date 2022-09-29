@@ -4,10 +4,12 @@ import useFetch from "./backend/useFetch";
 import MensageScreen from "./components/MensageScreen";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
-import Hero from "./components/Hero";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Dashboard from "./pages/Dashboard";
+import MyCadastre from "./pages/MyCadastre";
+import Footer from "./components/Footer";
 
 function App(props) {
   // Call API page ID in Wordpress
@@ -25,13 +27,14 @@ function App(props) {
   ) : (
     <>
       <BrowserRouter>
-        <Header />
-        <Hero></Hero>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/como-funciona" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/meus-dados" element={<MyCadastre />} />
         </Routes>
       </BrowserRouter>
+      <Footer></Footer>
     </>
   );
 }

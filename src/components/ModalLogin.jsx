@@ -13,7 +13,7 @@ export default function ModalLogin(props) {
       <Modal.Body>
         <h2>Login do artista</h2>
         <div className="form-login">
-          <form action="/">
+          <form action="/dashboard">
             <label htmlFor="email">E-mail</label>
             <input type="text" name="email" />
             <label htmlFor="password">Senha</label>
