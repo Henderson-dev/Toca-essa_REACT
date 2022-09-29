@@ -8,7 +8,6 @@ import Hero from "./components/Hero";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import YourComponent from "./components/Teste";
 
 function App(props) {
   // Call API page ID in Wordpress
@@ -28,12 +27,10 @@ function App(props) {
       <BrowserRouter>
         <Header />
         <Hero></Hero>
-        <YourComponent></YourComponent>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/como-funciona" element={<About />} />
         </Routes>
-        <YourComponent></YourComponent>
       </BrowserRouter>
     </>
   );

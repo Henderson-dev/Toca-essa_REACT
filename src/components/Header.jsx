@@ -12,11 +12,9 @@ export default function Header() {
         <Row>
           <div className="col-12">
             <nav>
-              {/* <Link to="/">Home</Link>
-              <Link to="/como-funciona">Como funciona</Link> */}
               <ul>
-                <li></li>
-                <li></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/como-funciona">Como funciona</Link></li>
                 <li>
                   <a href="#" onClick={() => setModalLogin(true)}>
                     Login Artista
