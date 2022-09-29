@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import ModalLogin from "./ModalLogin";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const [modalLogin, setModalLogin] = useState(false);
@@ -15,10 +15,7 @@ export default function Header() {
               {/* <Link to="/">Home</Link>
               <Link to="/como-funciona">Como funciona</Link> */}
               <ul>
-                <li>
-                
-
-                </li>
+                <li></li>
                 <li></li>
                 <li>
                   <a href="#" onClick={() => setModalLogin(true)}>
