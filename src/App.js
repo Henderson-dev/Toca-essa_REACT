@@ -13,9 +13,8 @@ import InsertEvent from "./pages/InsertEvent";
 import EventArtist from "./pages/EventArtist";
 import EventPublic from "./pages/EventPublic";
 import ArtistAferEvent from "./pages/ArtistAferEvent";
-
-
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 
 function App(props) {
   // Call API page ID in Wordpress
@@ -42,9 +41,10 @@ function App(props) {
           <Route path="/show-evento/:id" element={<EventArtist />} />
           <Route path="/evento/:id" element={<EventPublic />} />
           <Route path="/evento-realizado/:id" element={<ArtistAferEvent />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
       <Footer></Footer>
+      </BrowserRouter>
     </>
   );
 }

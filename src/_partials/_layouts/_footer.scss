@@ -1,7 +1,8 @@
 /* Footer */
 
 footer {
-
+  padding: 55px 0;
+  background-color: $secondary;
 }
 
 /*
@@ -24,7 +25,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(md) {
-
 }
 
 // 768px
@@ -37,7 +37,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(lg) {
-
 }
 // 992px
 
