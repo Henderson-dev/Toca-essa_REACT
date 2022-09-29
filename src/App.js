@@ -9,6 +9,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Dashboard from "./pages/Dashboard";
 import MyCadastre from "./pages/MyCadastre";
+import InsertEvent from "./pages/InsertEvent";
+import EventArtist from "./pages/EventArtist";
+import EventPublic from "./pages/EventPublic";
+import ArtistAferEvent from "./pages/ArtistAferEvent";
+
+
 import Footer from "./components/Footer";
 
 function App(props) {
@@ -30,8 +36,12 @@ function App(props) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/como-funciona" element={<About />} />
-          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/meus-dados" element={<MyCadastre />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/novo-evento" element={<InsertEvent />} />
+          <Route path="/show-evento/:id" element={<EventArtist />} />
+          <Route path="/evento/:id" element={<EventPublic />} />
+          <Route path="/evento-realizado/:id" element={<ArtistAferEvent />} />
         </Routes>
       </BrowserRouter>
       <Footer></Footer>

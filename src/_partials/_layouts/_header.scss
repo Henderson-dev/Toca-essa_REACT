@@ -29,6 +29,7 @@ header{
     }
     li:last-child{
       background-color: $pink;
+      margin-right: 0;
       a{
         padding: 14px 20px 0 20px;
         &:hover{

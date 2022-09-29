@@ -1,0 +1,28 @@
+.hero-page {
+  background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
+  mix-blend-mode: normal;
+  margin-bottom: 74px;
+  height: 228px;
+  .container {
+    position: relative;
+    .logo-internal{
+      display: block;
+    }
+    .box-title-hero {
+      position: absolute;
+      left: 0;
+      bottom: -105px;
+      background-color: #2d97fa;
+      padding: 16px 55px 16px 24px;
+      width: 254px;
+      h1 {
+        font-family: $font-titles;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 110%;
+        color: #ffffff;
+      }
+    }
+  }
+}

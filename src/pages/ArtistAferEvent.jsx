@@ -4,7 +4,7 @@ import Header from "../components/Header";
 export default function ArtistAferEvent() {
   return (
     <>
-      <Header></Header>
+      <Header status="logado"></Header>
     </>
-  );
+  )
 }

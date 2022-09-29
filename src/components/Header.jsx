@@ -13,7 +13,7 @@ export default function Header({ status }) {
         <Row>
           <div className="col-12">
             <nav>
-              <ul>
+              <ul className="d-flex flex-row justify-content-end">
                 <li>
                   <Link to="/">Home</Link>
                 </li>
