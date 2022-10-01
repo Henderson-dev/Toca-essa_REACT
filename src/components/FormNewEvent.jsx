@@ -1,5 +1,6 @@
 import { React, useState, useRef } from "react";
 import { Container, Row } from "react-bootstrap";
+import { rootPath, pathsApi } from "../backend/usePaths";
 
 export default function FormNewEvent() {
   //const [artist, setArtist] = useState("Creedance Cover");
@@ -10,19 +11,19 @@ export default function FormNewEvent() {
   const [message, setMessage] = useState("");
   const form = useRef(null);
 
+  // Define o caminho do endpoint de inserção de evento no back-end
+  const routeAPI = rootPath + pathsApi[0].route;
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData(form.current);
     //form.submit();
     setMessage("loading");
     try {
-      let res = await fetch(
-        "https://artesplasticas.art.br/_react_backend/toca_essa/inserir-evento",
-        {
-          method: "POST",
-          body: data,
-        }
-      ).then((response) => {
+      let res = await fetch(routeAPI, {
+        method: "POST",
+        body: data,
+      }).then((response) => {
         console.log(response);
         if (response.status === 200) {
           setStatus("ok");
