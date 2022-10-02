@@ -1,8 +1,6 @@
 // Padrao de formularios
 // Use a classe form-default para stilizar os campos de formulário
-@mixin input-default($pad: 12px 12px, $mb: 13px, $bg: $blue) {
-  border: 1px solid $default-color;
-  border-radius: 0;
+@mixin input-default($pad: 12px 12px, $mb: 0, $bg: $blue) {
   box-sizing: border-box;
   font-family: $font-default;
   font-style: normal;
@@ -17,7 +15,11 @@
   width: 100%;
   padding: $pad;
   margin-bottom: $mb;
-  height: 40px;
+  margin-top: 5px;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #979292;
+  border-radius: 10px;
 }
 
 // Use a classe form-default para stilizar os campos do formulário
@@ -27,7 +29,7 @@
     color: $default-color;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 14px;
     line-height: 140%;
     margin-bottom: 0.7rem;
   }
@@ -38,12 +40,21 @@
     padding: 0 15px 0 0;
   }
 
+  .form-right {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
   // estiliza todos os elementos de formulário
   input[type="text"],
   input[type="email"],
-  input[type="tel"] {
+  input[type="tel"],
+  input[type="date"],
+  input[type="time"],
+  input[type="password"] {
     @include input-default();
   }
+
   textarea {
     @include input-default();
     height: 160px;
@@ -55,20 +66,24 @@
     margin-top: 15px;
     border: none;
     display: block;
-    width: 100%;
+    width: fit-content;
+    min-width: 129px;
     font-family: $font-family-base;
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 22px;
     letter-spacing: 0.1em;
-    color: $default-color;
+    color: $white;
     text-transform: uppercase;
     transition: all 0.2s ease-in-out;
-    padding: 16px 20px;
+    padding: 10px 16px;
+    border: 2px solid $primary;
+    border-radius: 50px;
     &:hover {
-      background-color: $red;
+      background-color: $pink;
       color: $white;
+      border: 2px solid $pink;
     }
   }
 

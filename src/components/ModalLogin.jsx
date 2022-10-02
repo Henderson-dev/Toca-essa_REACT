@@ -39,7 +39,7 @@ export default function ModalLogin(props) {
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>
         <h2>Login do artista</h2>
-        <div className="form-login">
+        <div className="form-login form-default">
           <form onSubmit={handleSubmit} action="/dashboard">
             <label htmlFor="email">
               <span>E-mail</span>
@@ -54,12 +54,13 @@ export default function ModalLogin(props) {
               <span>Senha</span>
               <input type="password" name="password" onChange={hadlePassword} />
             </label>
-            <input type="submit" value="ok" />
+            <input type="submit" value="ok" className="form-right" />
           </form>
-          <ul>
+          <ul className="d-flex list-login">
             <li>
               <a href="#">Esqueci minha senha</a>
             </li>
+            <li>|</li>
             <li>
               <a href="#">Criar minha conta</a>
             </li>
