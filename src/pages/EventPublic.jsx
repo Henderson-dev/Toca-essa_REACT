@@ -6,7 +6,7 @@ export default function EventPublic() {
   return (
     <>
       <Header status=""></Header>
-      <EventInsertMusic></EventInsertMusic>
+      <EventInsertMusic idevento="55"></EventInsertMusic>
     </>
   );
 }

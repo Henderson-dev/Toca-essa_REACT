@@ -25,9 +25,12 @@ export default function FormNewEvent() {
         body: data,
       }).then((response) => {
         console.log(response);
+
         if (response.status === 200) {
+          setMessage("");
           setStatus("ok");
         } else {
+          setMessage("");
           setStatus("erro");
         }
       });
