@@ -2,6 +2,7 @@ import { React, useState, useRef, useEffect, useId } from "react";
 import { Container, Row } from "reactstrap";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import FlshCardMusic from "../components/FlshCardMusic";
+import uuid from "react-uuid";
 
 export default function EventInsertMusic({ idevento }) {
   const [status, setStatus] = useState("");
@@ -23,12 +24,6 @@ export default function EventInsertMusic({ idevento }) {
     setArtist("");
   }
 
-  // Insere os cards na tela
-  function insertCardsMusic(music, artist) {
-    console.log(music, artist);
-    //setAllCards([...allCards, {id: 1, music, artist}]);
-  }
-
   // Define o caminho do endpoint de inserção de pedidos no evento
   const routeAPI = rootPath + pathsApi[2].route;
 
@@ -45,7 +40,8 @@ export default function EventInsertMusic({ idevento }) {
         console.log(response);
         if (response.status === 200) {
           setStatus("ok");
-          insertCardsMusic(music, artist);
+          // Insere card de múisca na tela
+          insertCardsMusic(uuid(), music, artist);
           setMessage("");
           clearFields();
           timeMessage();
@@ -62,25 +58,27 @@ export default function EventInsertMusic({ idevento }) {
   };
 
   //
-  useEffect(() => {}, []);
+  //useEffect(() => {}, []);
 
-  let setlist = [
-    {
-      id: 1,
-      music: "Nome da musica 1",
-      artist: "Nome da banda 1",
-    },
-    {
-      id: 1,
-      music: "Nome da musica 2",
-      artist: "Nome da banda",
-    },
-    {
-      id: 1,
-      music: "Nome da musica 3",
-      artist: "Nome da banda",
-    },
-  ];
+  const setlist = [];
+
+  const [data, setData] = useState(setlist);
+
+  // Insere os cards na tela
+  function insertCardsMusic(id, music, artist) {
+    console.log(music, artist);
+    //setAllCards([...allCards, {id: 1, music, artist}]);
+    const newItem = {
+      id: id,
+      music: music,
+      artist: artist,
+    };
+
+    const newItems = [...data, newItem];
+
+    setData(newItems);
+    //setInputValue('');
+  }
 
   return (
     <>
@@ -148,12 +146,13 @@ export default function EventInsertMusic({ idevento }) {
       <section>
         <Container>
           <Row>
-            {setlist.map((flashMusic) => {
+            {data.map((flashMusic) => {
               return (
                 <FlshCardMusic
                   music={flashMusic.music}
                   artist={flashMusic.artist}
                   key={flashMusic.id}
+                  id={flashMusic.id}
                 ></FlshCardMusic>
               );
             })}
