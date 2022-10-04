@@ -60,7 +60,13 @@ export default function EventInsertMusic({ idevento }) {
   //
   //useEffect(() => {}, []);
 
-  const setlist = [];
+  const setlist = [
+    {
+      id: uuid(),
+      music: "Michelle",
+      artist: "The Beatles",
+    },
+  ];
 
   const [data, setData] = useState(setlist);
 
@@ -146,16 +152,17 @@ export default function EventInsertMusic({ idevento }) {
       <section>
         <Container>
           <Row>
-            {data.map((flashMusic) => {
+            {data.map((flashMusic, index) => {
               return (
                 <FlshCardMusic
                   music={flashMusic.music}
                   artist={flashMusic.artist}
                   key={flashMusic.id}
                   id={flashMusic.id}
+                  color={index}
                 ></FlshCardMusic>
               );
-            })}
+            }).reverse()}
           </Row>
         </Container>
       </section>
