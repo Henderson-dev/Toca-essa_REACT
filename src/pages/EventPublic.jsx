@@ -29,7 +29,7 @@ export default function EventPublic() {
     <>
       <Header status=""></Header>
       <EventInsertMusic idevento={id}></EventInsertMusic>
-      <SetlistGroup dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}></SetlistGroup>
+      <SetlistGroup idevento={id} dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}></SetlistGroup>
     </>
   );
 }

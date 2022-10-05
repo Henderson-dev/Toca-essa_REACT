@@ -3,12 +3,13 @@ import { Container, Row } from "reactstrap";
 import SetlistCard from "./SetlistCard";
 import TitleBox from "./TitleBox";
 
-export default function SetlistGroup({ dataSetlist }) {
+export default function SetlistGroup({ idevento, dataSetlist }) {
   console.log(dataSetlist);
   return (
     <>
       <section className="setlist-group">
         <form>
+        <input type="hidden" name="id_evento" value={idevento}></input>
           <Container>
             <Row>
               <TitleBox title="Setlist de hoje" bgcolor="pink"></TitleBox>
