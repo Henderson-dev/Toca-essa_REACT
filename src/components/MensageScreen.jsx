@@ -1,4 +1,5 @@
 import React from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function MensageScreen({ msg, error }) {
   return (
@@ -15,6 +16,7 @@ export default function MensageScreen({ msg, error }) {
               </>
             ) : (
               <>
+                <ScaleLoader color="#ffffff" />
                 <span className="loading"></span>
                 <h1>{msg}</h1>
               </>
