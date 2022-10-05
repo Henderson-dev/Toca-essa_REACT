@@ -1,18 +1,49 @@
-.card-request {
-  padding: 20px 25px;
-  background: #f9b0db;
-  h2 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
+.group-request {
+  padding: 78px 0 170px;
+  .container {
+    position: relative;
+    .box-title-hero {
+      position: absolute;
+      left: 8px;
+      top: -120px;
+      background-color: #2d97fa;
+      padding: 16px 55px 16px 24px;
+      width: 254px;
+      h1 {
+        font-family: $font-titles;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 110%;
+        color: #ffffff;
+      }
+    }
   }
-  span {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
+  .card-request {
+    padding: 20px 25px;
+    margin-bottom: 15px;
+    h2 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #000000;
+    }
+    span {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+    }
+  }
+  .card-pink {
+    background: #f9b0db;
+  }
+  .card-purple {
+    background: rgba(71, 47, 146, 0.35);
+  }
+  .card-blue {
+    background: rgba(45, 151, 250, 0.5);
   }
 }

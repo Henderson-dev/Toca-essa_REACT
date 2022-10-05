@@ -3,6 +3,7 @@ import { Container, Row } from "reactstrap";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import FlshCardMusic from "../components/FlshCardMusic";
 import uuid from "react-uuid";
+import TitleBox from "./TitleBox";
 
 export default function EventInsertMusic({ idevento }) {
   const [status, setStatus] = useState("");
@@ -72,18 +73,36 @@ export default function EventInsertMusic({ idevento }) {
 
   // Insere os cards na tela
   function insertCardsMusic(id, music, artist) {
-    console.log(music, artist);
-    //setAllCards([...allCards, {id: 1, music, artist}]);
+    //console.log(music, artist);
     const newItem = {
       id: id,
       music: music,
       artist: artist,
     };
-
     const newItems = [...data, newItem];
-
     setData(newItems);
-    //setInputValue('');
+  }
+
+  // Função para mudar a cor de fundo dos cards de músia
+  let bgCollor = "card-pink";
+  function cardColor(number) {
+    // Mutiple of 3
+    let catNumber = number % 3;
+    switch (catNumber) {
+      case 0:
+        bgCollor = "card-pink";
+        break;
+      case 1:
+        bgCollor = "card-blue";
+        break;
+      case 2:
+        bgCollor = "card-purple";
+        break;
+      default:
+        bgCollor = "";
+        break;
+    }
+    return bgCollor;
   }
 
   return (
@@ -149,20 +168,27 @@ export default function EventInsertMusic({ idevento }) {
           </Row>
         </Container>
       </section>
-      <section>
+      <section className="group-request">
         <Container>
+          <div className="box-title-hero">
+            <h1>
+              Seus<br></br>pedidos
+            </h1>
+          </div>
           <Row>
-            {data.map((flashMusic, index) => {
-              return (
-                <FlshCardMusic
-                  music={flashMusic.music}
-                  artist={flashMusic.artist}
-                  key={flashMusic.id}
-                  id={flashMusic.id}
-                  color={index}
-                ></FlshCardMusic>
-              );
-            }).reverse()}
+            {data
+              .map((flashMusic, index) => {
+                return (
+                  <FlshCardMusic
+                    music={flashMusic.music}
+                    artist={flashMusic.artist}
+                    key={flashMusic.id}
+                    id={flashMusic.id}
+                    color={cardColor(index)}
+                  ></FlshCardMusic>
+                );
+              })
+              .reverse()}
           </Row>
         </Container>
       </section>

@@ -1,0 +1,25 @@
+.setlist-group {
+  padding: 93px 0;
+  background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
+  mix-blend-mode: normal;
+
+  .card-setlist {
+    padding: 16px 25px;
+    background: rgba(251, 251, 251, 0.1);
+    margin-bottom: 15px;
+    h2 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      color: #ffffff;
+    }
+    span {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      color: #ffffff;
+    }
+  }
+}

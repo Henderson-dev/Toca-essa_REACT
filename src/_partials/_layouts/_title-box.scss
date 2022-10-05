@@ -1,0 +1,22 @@
+.container {
+  position: relative;
+  .box-title-hero-internal {
+    position: absolute;
+    left: 8px;
+    top: -120px;
+    background-color: #2d97fa;
+    padding: 16px 55px 16px 24px;
+    width: 254px;
+    h1 {
+      font-family: $font-titles;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 110%;
+      color: #ffffff;
+    }
+  }
+  .pink {
+    background-color: $pink;
+  }
+}

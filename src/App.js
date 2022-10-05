@@ -1,7 +1,5 @@
 import React from "react";
-import "./App.css";
-import useFetch from "./backend/useFetch";
-import MensageScreen from "./components/MensageScreen";
+//import "./App.css";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -16,19 +14,7 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 
 function App(props) {
-  // Call API page ID in Wordpress
-  let pathApiData = "evento/36";
-
-  let dataFromPage = "wp-json/wp/v2/" + pathApiData;
-  const { data: pageData, error, isLoad } = useFetch(dataFromPage);
-
-  return isLoad === true ? (
-    // Aguardando carregamento
-    <MensageScreen msg="Carregando..." />
-  ) : // Caso tenha erro na chamada da API
-  error ? (
-    <MensageScreen msg="Sem conexão com a API" error={error.response} />
-  ) : (
+  return (
     <>
       <BrowserRouter>
         <Routes>
@@ -42,10 +28,9 @@ function App(props) {
           <Route path="/evento-realizado/:id" element={<ArtistAferEvent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      <Footer></Footer>
+        <Footer></Footer>
       </BrowserRouter>
     </>
   );
 }
-
 export default App;
