@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import SetlistGroup from "../components/SetlistGroup";
 import useFetch from "../backend/useFetch";
 import MensageScreen from "../components/MensageScreen";
+import EventClosed from "../components/EventClosed";
+import EventWait from "../components/EventWait";
 
 export default function EventPublic() {
   // Pega o id do evento na url
@@ -17,7 +19,9 @@ export default function EventPublic() {
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
 
-  //console.log(pageData.acf.lista_de_musicas_do_repertorio);
+  //console.log(pageData.acf.nome_artista);
+  //const eventClose = pageData.acf.nome_artista;
+  //const eventStart = pageData.acf.evento_iniciar;
 
   return isLoad === true ? (
     // Aguardando carregamento
@@ -28,8 +32,33 @@ export default function EventPublic() {
   ) : (
     <>
       <Header status=""></Header>
-      <EventInsertMusic idevento={id}></EventInsertMusic>
-      <SetlistGroup idevento={id} dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}></SetlistGroup>
+      {pageData.acf.evento_encerrado === true ? (
+        <>
+          <EventClosed
+            artist={pageData.acf.nome_artista}
+            event={pageData.acf.nome_do_evento}
+            datevent={pageData.acf.data}
+            hourevent={pageData.acf.hora}
+          ></EventClosed>
+        </>
+      ) : pageData.acf.evento_iniciar === true ? (
+        <>
+          <EventInsertMusic idevento={id}></EventInsertMusic>
+          <SetlistGroup
+            idevento={id}
+            dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
+          ></SetlistGroup>
+        </>
+      ) : (
+        <>
+          <EventWait
+            artist={pageData.acf.nome_artista}
+            event={pageData.acf.nome_do_evento}
+            datevent={pageData.acf.data}
+            hourevent={pageData.acf.hora}
+          ></EventWait>
+        </>
+      )}
     </>
   );
 }

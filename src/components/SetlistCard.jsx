@@ -26,7 +26,7 @@ export default function SetlistCard({ music, artist, row, sendfunction }) {
           </div>
           <div className="box-feedback d-flex flex-column">
             {/* Like */}
-            <span onClick={()=>{sendfunction('like', row)}}>
+            <span onClick={()=>{sendfunction('like', row)}} value={row}>
               <svg
                 width="24"
                 height="20"

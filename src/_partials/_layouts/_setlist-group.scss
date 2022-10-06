@@ -3,6 +3,20 @@
   background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
 
+  .box-msg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p {
+      margin-left: 15px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      color: #ffffff;
+    }
+  }
+
   .card-setlist {
     padding: 16px 25px;
     background: rgba(251, 251, 251, 0.1);
@@ -21,9 +35,16 @@
       line-height: 22px;
       color: #ffffff;
     }
-    .box-feedback{
-      span{
+    .box-feedback {
+      span {
         cursor: pointer;
+        margin-bottom: 4px;
+        svg path {
+          &:hover {
+            fill: $primary;
+            stroke: $primary;
+          }
+        }
       }
     }
   }

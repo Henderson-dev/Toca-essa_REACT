@@ -1,18 +1,20 @@
-import { React, useRef } from "react";
+import { React, useState } from "react";
 import { Container, Row } from "reactstrap";
 import SetlistCard from "./SetlistCard";
 import TitleBox from "./TitleBox";
 import { rootPath, pathsApi } from "../backend/usePaths";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export default function SetlistGroup({ idevento, dataSetlist }) {
-  //console.log(dataSetlist);
-  const formLike = useRef(null);
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   // Define o caminho do endpoint de inserção de pedidos no evento
   const routeAPI = rootPath + pathsApi[3].route;
 
+  // Envia acao de like e unlike para o back-end
   async function likeSubmit(action, rowmusic) {
-    //console.log(action + rowmusic);
+    setMessage("loading");
 
     const data = new FormData();
 
@@ -23,7 +25,7 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
 
     //e.preventDefault();
     //form.submit();
-    //setMessage("loading");
+    //
     //console.log(data);
 
     try {
@@ -33,15 +35,10 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
       }).then((response) => {
         console.log(response);
         if (response.status === 200) {
-          // setStatus("ok");
-          // setMessage("");
-          // clearFields();
-          // timeMessage();
+          setMessage("");
         } else {
-          // setStatus("erro");
-          // setMessage("");
-          // clearFields();
-          // timeMessage();
+          setMessage("");
+          setStatus("erro");
         }
       });
     } catch (err) {
@@ -52,10 +49,25 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
   return (
     <>
       <section className="setlist-group">
-        <form ref={formLike}>
+        <form>
           <Container>
             <Row>
               <TitleBox title="Setlist de hoje" bgcolor="pink"></TitleBox>
+
+              {message === "loading" && (
+                <div className="box-msg">
+                  <ScaleLoader color="#ffffff" height={10} />
+                  <p>Enviando seu pedido...</p>
+                </div>
+              )}
+              {status === "erro" && (
+                <div className="box-msg">
+                  <p>
+                    Aconteceu um erro na sua solicitação... Tente novamente em
+                    alguns minutos.
+                  </p>
+                </div>
+              )}
               {dataSetlist.map((setlist, index) => {
                 return (
                   <SetlistCard
