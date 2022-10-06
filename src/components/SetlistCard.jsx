@@ -1,24 +1,19 @@
 import { React, useState } from "react";
 
-export default function SetlistCard({ music, artist, row }) {
+export default function SetlistCard({ music, artist, row, sendfunction }) {
   // Set color of buttons Like and Unlike
   const [colorDefault, setColorDefault] = useState("white");
   const [colorSelect, setcolorSelect] = useState("#EC008C");
   const [like, setLike] = useState(false);
   const [unLike, setUnLike] = useState(false);
 
-  function actionLike(row) {
-    setLike(true);
-    //console.log(row);
-    document.querySelector("#like-" + row).value = true;
-    console.log(document.querySelector("#like-" + row).value);
-  }
-
-  function actionUnLike(row) {
+  function actionUnLike(action, row) {
     //setLike(true);
     //console.log(row);
-    document.querySelector("#unlike-" + row).value = true;
-    console.log(document.querySelector("#unlike-" + row).value);
+    let $rowSelect = document.querySelector("#unlike-" + row).value;
+    if (action === "unlike") {
+      console.log("deslike" + row);
+    }
   }
 
   return (
@@ -26,23 +21,12 @@ export default function SetlistCard({ music, artist, row }) {
       <div className="col-md-6">
         <div className="card-setlist d-flex justify-content-between ">
           <div className="box-music">
-            <input type="hidden" name="numero_musica" value=""></input>
             <h2>{music}</h2>
             <span>{artist}</span>
           </div>
           <div className="box-feedback d-flex flex-column">
             {/* Like */}
-            <span
-              onClick={() => {
-                actionLike(row);
-              }}
-            >
-              <input
-                type="hidden"
-                id={`like-${row}`}
-                name={`like-${row}`}
-                value={row}
-              ></input>
+            <span onClick={()=>{sendfunction('like', row)}}>
               <svg
                 width="24"
                 height="20"
@@ -60,16 +44,8 @@ export default function SetlistCard({ music, artist, row }) {
 
             {/* Unlike */}
             <span
-              onClick={() => {
-                actionUnLike(row);
-              }}
+              onClick={()=>sendfunction('unlike', row)}
             >
-              <input
-                type="hidden"
-                id={`unlike-${row}`}
-                name={`unlike-${row}`}
-                value=""
-              ></input>
               <svg
                 width="24"
                 height="20"

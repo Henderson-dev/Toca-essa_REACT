@@ -1,10 +1,9 @@
-import { React, useState, useRef, useEffect, useId } from "react";
+import { React, useState, useRef } from "react";
 import { Container, Row } from "reactstrap";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import FlshCardMusic from "../components/FlshCardMusic";
 import uuid from "react-uuid";
 import ScaleLoader from "react-spinners/ScaleLoader";
-import TitleBox from "./TitleBox";
 
 export default function EventInsertMusic({ idevento }) {
   const [status, setStatus] = useState("");
