@@ -47,5 +47,13 @@
         }
       }
     }
+    .set-like path{
+      fill: $primary;
+      stroke: $primary;
+    }
+    .set-unlike path{
+      fill: $primary;
+      stroke: $primary;
+    }    
   }
 }

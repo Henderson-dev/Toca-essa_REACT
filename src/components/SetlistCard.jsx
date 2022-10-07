@@ -28,6 +28,7 @@ export default function SetlistCard({ music, artist, row, sendfunction }) {
             {/* Like */}
             <span onClick={()=>{sendfunction('like', row)}} value={row}>
               <svg
+                id={`like-${row}`}
                 width="24"
                 height="20"
                 viewBox="0 0 24 20"
@@ -47,6 +48,7 @@ export default function SetlistCard({ music, artist, row, sendfunction }) {
               onClick={()=>sendfunction('unlike', row)}
             >
               <svg
+                id={`unlike-${row}`}
                 width="24"
                 height="20"
                 viewBox="0 0 24 20"

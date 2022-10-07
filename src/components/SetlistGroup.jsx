@@ -23,6 +23,10 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
     data.append("numero_musica", rowmusic);
     data.append("acao", action);
 
+    let actionSvg = document.querySelector("#" + action + "-" + rowmusic);
+    actionSvg.classList.add("set-"+action);
+    console.log(actionSvg);
+
     //e.preventDefault();
     //form.submit();
     //
