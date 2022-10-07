@@ -15,16 +15,19 @@ export default function useFetch(url) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    BACK_END_URL.get(url)
-      .then((response) => {
-        setData(response.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setIsLoad(false);
-      });
+    // Executa a chamada na API a cada 30 segundos
+    let interval = setInterval(() => {
+      BACK_END_URL.get(url)
+        .then((response) => {
+          setData(response.data);
+        })
+        .catch((err) => {
+          setError(err);
+        })
+        .finally(() => {
+          setIsLoad(false);
+        });
+    }, 30000);
   }, [url]);
   return { data, error, isLoad };
 }

@@ -7,21 +7,17 @@ import useFetch from "../backend/useFetch";
 import MensageScreen from "../components/MensageScreen";
 import EventClosed from "../components/EventClosed";
 import EventWait from "../components/EventWait";
+import { useEffect } from "react";
 
 export default function EventPublic() {
   // Pega o id do evento na url
   const { id } = useParams();
   const idEvent = { id };
 
-  // Call API page ID in Wordpress
-  let pathApiData = "evento/" + idEvent.id;
 
+  let pathApiData = "evento/" + idEvent.id;
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
-
-  //console.log(pageData.acf.nome_artista);
-  //const eventClose = pageData.acf.nome_artista;
-  //const eventStart = pageData.acf.evento_iniciar;
 
   return isLoad === true ? (
     // Aguardando carregamento
