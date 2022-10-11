@@ -1,5 +1,29 @@
 import React from "react";
 
-export default function CardRequest() {
-  return <>request</>;
+export default function CardRequest({ row, music, artist }) {
+  // Função para selecionar e deselecionar os cards
+  function selectMusic(row) {
+    let cardMusic = document.querySelector(".card-" + row);
+    if (cardMusic.classList.contains("selected-card")) {
+      cardMusic.classList.remove("selected-card");
+    } else {
+      cardMusic.classList.add("selected-card");
+    }
+  }
+
+  return (
+    <>
+      <article className="col-lg-4">
+        <div
+          className={`box-request card-${row}`}
+          onClick={() => {
+            selectMusic(row);
+          }}
+        >
+          <h2>{music}</h2>
+          <span>{artist}</span>
+        </div>
+      </article>
+    </>
+  );
 }

@@ -5,6 +5,7 @@ import HeroPage from "../components/HeroPage";
 import useFetch from "../backend/useFetch";
 import CardRequest from "../components/CardRequest";
 import MensageScreen from "../components/MensageScreen";
+import { Container, Row } from "react-bootstrap";
 
 export default function EventArtist() {
   // Pega o id do evento na url
@@ -12,7 +13,8 @@ export default function EventArtist() {
   const idEvent = { id };
 
   // Call API page ID in Wordpress
-  let pathApiData = "evento/" + idEvent.id;
+  //let pathApiData = "evento/" + idEvent.id;
+  let pathApiData = "evento/11";
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
   console.log(pageData);
@@ -36,11 +38,20 @@ export default function EventArtist() {
       <Header status="logado"></Header>
       <HeroPage title="Pedidos recebidos"></HeroPage>
       <section className="list-requests">
-        {/* {pageData.map((card) => {
+        <Container>
+          <Row className="d-flex list-request">
+            {pageData.acf.lista_de_pedidos.map((card, index) => {
               return (
-                <CardRequest></CardRequest>
+                <CardRequest
+                  key={index}
+                  row={index+1}
+                  music={card.nome_da_musica_pedido}
+                  artist={card.nome_do_artistabanda_pedido}
+                ></CardRequest>
               );
-        })} */}
+            })}
+          </Row>
+        </Container>
       </section>
     </>
   );

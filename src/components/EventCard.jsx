@@ -16,25 +16,29 @@ export default function EventCard({
     <>
       <article className="card-event">
         <Link to={`show-evento/${eventid}`}>
-            <Row>
-              <div className="col-md-7">
-                <h2>{event}</h2>
-                <p>{address}</p>
-                <p>{addressPlace}</p>
+          <Row>
+
+            <div className="box-event-details">
+              <h2>{event}</h2>
+              <p>{address}</p>
+              <p>{addressPlace}</p>
+            </div>
+
+            <div className="col-md-3">
+              <div className="bto-start">
+                {/* <Link to="/novo-evento">Iniciar evento</Link> */}
               </div>
-              <div className="col-md-3">
-                <div className="bto-start">
-                  {/* <Link to="/novo-evento">Iniciar evento</Link> */}
-                </div>
+            </div>
+
+              <div className="box-date">
+                <h2>
+                  {dayEvent} {monthEvent}
+                </h2>
+                <h3>{yearEvent}</h3>
+                <span>{hour} hs</span>
               </div>
-              <div className="col-md-2">
-                <div className="box-date">
-                  <span>{dayEvent} {monthEvent}</span>
-                  <span>{yearEvent}</span>
-                  <span>{hour} hs</span>
-                </div>
-              </div>
-            </Row>
+
+          </Row>
         </Link>
       </article>
     </>
