@@ -5,7 +5,17 @@ import FlshCardMusic from "../components/FlshCardMusic";
 import uuid from "react-uuid";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
-export default function EventInsertMusic({ idevento }) {
+export default function EventInsertMusic({
+  idevento,
+  enventname,
+  placename,
+  address,
+  addressnumber,
+  complement,
+  bairro,
+  city,
+  state,
+}) {
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
   const [music, setMusic] = useState("");
@@ -73,7 +83,6 @@ export default function EventInsertMusic({ idevento }) {
 
   // Insere os cards na tela
   function insertCardsMusic(id, music, artist) {
-    //console.log(music, artist);
     const newItem = {
       id: id,
       music: music,
@@ -113,10 +122,10 @@ export default function EventInsertMusic({ idevento }) {
             <div className="col-lg-4"></div>
             <div className="col-lg-7">
               <h1>Bem vindo</h1>
-              <p>Apresentação Jonh Cover Lenon</p>
+              <p>{enventname}</p>
               <div className="box-adress">
-                <h2>Birosca Bar</h2>
-                <p>Rua Almicar de Castro, 886 Pampulha - Belo Horizonte - MG</p>
+                <h2>{placename}</h2>
+                <p>{address}, {addressnumber} {complement} {bairro} - {city} - {state}</p>
               </div>
               <div className="form-do-music">
                 <h2>

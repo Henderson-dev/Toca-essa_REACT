@@ -24,13 +24,7 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
     data.append("acao", action);
 
     let actionSvg = document.querySelector("#" + action + "-" + rowmusic);
-    actionSvg.classList.add("set-"+action);
-    console.log(actionSvg);
-
-    //e.preventDefault();
-    //form.submit();
-    //
-    //console.log(data);
+    actionSvg.classList.add("set-" + action);
 
     try {
       let res = await fetch(routeAPI, {
@@ -46,6 +40,7 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
         }
       });
     } catch (err) {
+      setStatus("erro");
       console.log(err);
     }
   }
@@ -80,8 +75,6 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
                     artist={setlist.nome_do_artistabanda}
                     row={index + 1}
                     sendfunction={likeSubmit}
-                    // like={setlist.curtidas}
-                    // unlike={setlist.nao_curtida}
                   ></SetlistCard>
                 );
               })}

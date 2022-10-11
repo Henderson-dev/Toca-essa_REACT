@@ -16,7 +16,7 @@ export default function useFetch(url) {
 
   useEffect(() => {
     // Executa a chamada na API a cada 30 segundos
-    let interval = setInterval(() => {
+    //let interval = setInterval(() => {
       BACK_END_URL.get(url)
         .then((response) => {
           setData(response.data);
@@ -27,7 +27,7 @@ export default function useFetch(url) {
         .finally(() => {
           setIsLoad(false);
         });
-    }, 30000);
+    //}, 30000);
   }, [url]);
   return { data, error, isLoad };
 }

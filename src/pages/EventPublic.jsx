@@ -7,13 +7,11 @@ import useFetch from "../backend/useFetch";
 import MensageScreen from "../components/MensageScreen";
 import EventClosed from "../components/EventClosed";
 import EventWait from "../components/EventWait";
-import { useEffect } from "react";
 
 export default function EventPublic() {
   // Pega o id do evento na url
   const { id } = useParams();
   const idEvent = { id };
-
 
   let pathApiData = "evento/" + idEvent.id;
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
@@ -39,7 +37,17 @@ export default function EventPublic() {
         </>
       ) : pageData.acf.evento_iniciar === true ? (
         <>
-          <EventInsertMusic idevento={id}></EventInsertMusic>
+          <EventInsertMusic 
+          idevento={id} 
+          enventname={pageData.acf.nome_do_evento}
+          placename={pageData.acf.nome_local}
+          address={pageData.acf.nome_local}
+          addressnumber={pageData.acf.nome_local}
+          bairro={pageData.acf.nome_local}
+          complement={pageData.acf.nome_local}
+          city={pageData.acf.nome_local}
+          state={pageData.acf.nome_local}
+          ></EventInsertMusic>
           <SetlistGroup
             idevento={id}
             dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}

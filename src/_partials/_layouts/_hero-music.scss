@@ -5,6 +5,26 @@
   justify-content: center;
   background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
+  h1{
+    font-family: $font-titles;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  p{
+
+  }
+  .box-adress{
+    h2{
+
+    }
+    p{
+
+    }
+  }
   .form-do-music {
     display: flex;
     flex-direction: column;
