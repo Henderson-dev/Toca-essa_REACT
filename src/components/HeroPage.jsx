@@ -10,7 +10,7 @@ export default function HeroPage({ title }) {
           <Row>
             <div className="col-md-6">
               <img
-                src="./assets/images/logo_toca-essa-small.png"
+                src="../../assets/images/logo_toca-essa-small.png"
                 alt="Toca Essa"
                 className="logo-internal"
               />

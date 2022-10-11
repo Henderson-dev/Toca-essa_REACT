@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import HeroPage from "../components/HeroPage";
 import useFetch from "../backend/useFetch";
 import MensageScreen from "../components/MensageScreen";
+import { Container } from "react-bootstrap";
 
 export default function Dashboard() {
   // Call API page ID in Wordpress
@@ -13,7 +14,7 @@ export default function Dashboard() {
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
   //console.log(pageData);
 
-  function formatDate(dt) {
+  function formatDate(dt, prop) {
     let eventMonth = "";
     let nameMonth = "";
     let eventDay = "";
@@ -23,9 +24,6 @@ export default function Dashboard() {
       eventMonth = dt.substr(3, 2);
       eventDay = dt.substr(0, 2);
       eventYear = dt.substr(6, 4);
-
-      console.log(dt + " -  ");
-      console.log(eventYear);
 
       switch (eventMonth) {
         case "01":
@@ -41,7 +39,15 @@ export default function Dashboard() {
           nameMonth = "";
       }
     }
-    return nameMonth;
+    if (prop === "month") {
+      return nameMonth;
+    } else if (prop === "day") {
+      return eventDay;
+    } else if (prop === "year") {
+      return eventYear;
+    } else {
+      return [eventDay, nameMonth, eventYear];
+    }
   }
 
   return isLoad === true ? ( // Aguardando carregamento
@@ -60,22 +66,35 @@ export default function Dashboard() {
       <Header status="logado"></Header>
       <HeroPage title="Próximos eventos"></HeroPage>
       <section className="list-events">
+        <Container>
         {pageData
           .map((cardevent) => {
+            let address = `
+            ${cardevent.acf.rua}, 
+            ${cardevent.acf.numero} 
+            ${cardevent.acf.complemento} 
+            ${cardevent.acf.bairro}
+            `;
+            let addressPlace = `
+            ${cardevent.acf.cidade} 
+            ${cardevent.acf.estado} 
+            `;            
             return (
               <EventCard
                 key={cardevent.id}
                 eventid={cardevent.id}
                 event={cardevent.acf.nome_do_evento}
-                dateEvent={formatDate(cardevent.acf.data)}
+                address={address}
+                addressPlace={addressPlace}
+                dayEvent={formatDate(cardevent.acf.data, "day")}
+                monthEvent={formatDate(cardevent.acf.data, "month")}
+                yearEvent={formatDate(cardevent.acf.data, "year")}
                 hour={cardevent.acf.hora}
               />
             );
           })
           .reverse()}
-      </section>
-      <section className="list-events">
-        <EventCard></EventCard>
+        </Container>
       </section>
     </>
   );

@@ -23,7 +23,7 @@ function App(props) {
           <Route path="/meus-dados" element={<MyCadastre />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/novo-evento" element={<InsertEvent />} />
-          <Route path="/show-evento/:id" element={<EventArtist />} />
+          <Route path="/dashboard/show-evento/:id" element={<EventArtist />} />
           <Route path="/evento/:id" element={<EventPublic />} />
           <Route path="/evento-realizado/:id" element={<ArtistAferEvent />} />
           <Route path="*" element={<NotFound />} />
