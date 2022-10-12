@@ -20,7 +20,7 @@ export default function SetlistCardArtist({
             <div className="box-feedback d-flex flex-column">
               {/* Like */}
               <div className="box-like d-flex">
-                <span>{like}</span>
+                <span>{like > 0 ? like : "0"}</span>
                 <span value={row}>
                   <svg
                     id={`like-${row}`}
@@ -41,7 +41,7 @@ export default function SetlistCardArtist({
 
               {/* Unlike */}
               <div className="box-unlike d-flex">
-                <span>{unlike}</span>
+                <span>{unlike > 0 ? unlike : "0"}</span>
                 <span>
                   <svg
                     id={`unlike-${row}`}

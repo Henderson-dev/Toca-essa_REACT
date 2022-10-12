@@ -60,6 +60,7 @@ export default function EventArtist() {
             idevento={id}
             dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
             page="artist"
+            title="Setlist de hoje"
           ></SetlistGroup>      
     </>
   );

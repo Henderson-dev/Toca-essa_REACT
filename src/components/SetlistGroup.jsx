@@ -5,8 +5,9 @@ import SetlistCardArtist from "./SetlistCardArtist";
 import TitleBox from "./TitleBox";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import FormInsertSetlist from "./FormInsertSetlist";
 
-export default function SetlistGroup({ idevento, dataSetlist, page }) {
+export default function SetlistGroup({ idevento, dataSetlist, page, title }) {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
@@ -52,7 +53,7 @@ export default function SetlistGroup({ idevento, dataSetlist, page }) {
         <form>
           <Container>
             <Row>
-              <TitleBox title="Setlist de hoje" bgcolor="pink"></TitleBox>
+              <TitleBox title={title} bgcolor="pink"></TitleBox>
 
               {message === "loading" && (
                 <div className="box-msg">
@@ -68,30 +69,39 @@ export default function SetlistGroup({ idevento, dataSetlist, page }) {
                   </p>
                 </div>
               )}
-              {dataSetlist.map((setlist, index) => {
-                return page === "artist" ? (
-                  <>
-                    <SetlistCardArtist
-                      key={index}
-                      music={setlist.nome_da_musica}
-                      artist={setlist.nome_do_artistabanda}
-                      row={index + 1}
-                      like={setlist.curtidas}
-                      unlike={setlist.nao_curtida}
-                    ></SetlistCardArtist>
-                  </>
-                ) : (
-                  <>
-                    <SetlistCard
-                      key={index}
-                      music={setlist.nome_da_musica}
-                      artist={setlist.nome_do_artistabanda}
-                      row={index + 1}
-                      sendfunction={likeSubmit}
-                    ></SetlistCard>
-                  </>
-                );
-              })}
+
+              {page === "newevent" ? (
+                <>
+                  <FormInsertSetlist></FormInsertSetlist>
+                </>
+              ) : (
+                <>
+                  {dataSetlist.map((setlist, index) => {
+                    return page === "artist" ? (
+                      <>
+                        <SetlistCardArtist
+                          key={index}
+                          music={setlist.nome_da_musica}
+                          artist={setlist.nome_do_artistabanda}
+                          row={index + 1}
+                          like={setlist.curtidas}
+                          unlike={setlist.nao_curtida}
+                        ></SetlistCardArtist>
+                      </>
+                    ) : (
+                      <>
+                        <SetlistCard
+                          key={index}
+                          music={setlist.nome_da_musica}
+                          artist={setlist.nome_do_artistabanda}
+                          row={index + 1}
+                          sendfunction={likeSubmit}
+                        ></SetlistCard>
+                      </>
+                    );
+                  })}
+                </>
+              )}
             </Row>
           </Container>
         </form>
