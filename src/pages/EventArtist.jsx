@@ -6,6 +6,7 @@ import useFetch from "../backend/useFetch";
 import CardRequest from "../components/CardRequest";
 import MensageScreen from "../components/MensageScreen";
 import { Container, Row } from "react-bootstrap";
+import SetlistGroup from "../components/SetlistGroup";
 
 export default function EventArtist() {
   // Pega o id do evento na url
@@ -24,18 +25,18 @@ export default function EventArtist() {
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" dashboard="true"></Header>
       <MensageScreen msg="Carregando..." />
     </>
   ) : // Caso tenha erro na chamada da API
   error ? (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" dashboard="true"></Header>
       <MensageScreen msg="Sem conexão com a API" error={error.response} />
     </>
   ) : (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" dashboard="true"></Header>
       <HeroPage title="Pedidos recebidos"></HeroPage>
       <section className="list-requests">
         <Container>
@@ -51,10 +52,15 @@ export default function EventArtist() {
                   idevent={idEvent.id}
                 ></CardRequest>
               );
-            })}
+            }).reverse()}
           </Row>
         </Container>
       </section>
+      <SetlistGroup
+            idevento={id}
+            dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
+            page="artist"
+          ></SetlistGroup>      
     </>
   );
 }

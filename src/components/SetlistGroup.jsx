@@ -1,11 +1,12 @@
 import { React, useState } from "react";
 import { Container, Row } from "reactstrap";
 import SetlistCard from "./SetlistCard";
+import SetlistCardArtist from "./SetlistCardArtist";
 import TitleBox from "./TitleBox";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
-export default function SetlistGroup({ idevento, dataSetlist }) {
+export default function SetlistGroup({ idevento, dataSetlist, page }) {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
@@ -68,14 +69,27 @@ export default function SetlistGroup({ idevento, dataSetlist }) {
                 </div>
               )}
               {dataSetlist.map((setlist, index) => {
-                return (
-                  <SetlistCard
-                    key={index}
-                    music={setlist.nome_da_musica}
-                    artist={setlist.nome_do_artistabanda}
-                    row={index + 1}
-                    sendfunction={likeSubmit}
-                  ></SetlistCard>
+                return page === "artist" ? (
+                  <>
+                    <SetlistCardArtist
+                      key={index}
+                      music={setlist.nome_da_musica}
+                      artist={setlist.nome_do_artistabanda}
+                      row={index + 1}
+                      like={setlist.curtidas}
+                      unlike={setlist.nao_curtida}
+                    ></SetlistCardArtist>
+                  </>
+                ) : (
+                  <>
+                    <SetlistCard
+                      key={index}
+                      music={setlist.nome_da_musica}
+                      artist={setlist.nome_do_artistabanda}
+                      row={index + 1}
+                      sendfunction={likeSubmit}
+                    ></SetlistCard>
+                  </>
                 );
               })}
             </Row>

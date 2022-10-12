@@ -17,8 +17,7 @@ export default function CardRequest({ row, music, artist, select, idevent }) {
       actionCard = "select";
     }
 
-    //console.log(routeAPI);
-
+    // Gera o formulario para enviar dados
     const data = new FormData();
 
     // Set no id do evento

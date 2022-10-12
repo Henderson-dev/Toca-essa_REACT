@@ -47,13 +47,21 @@
         }
       }
     }
-    .set-like path{
+    .set-like path {
       fill: $primary;
       stroke: $primary;
     }
-    .set-unlike path{
+    .set-unlike path {
       fill: $primary;
       stroke: $primary;
-    }    
+    }
+    .box-like, .box-unlike {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      span:first-child {
+        margin-right: 10px;
+      }
+    }
   }
 }

@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import ModalLogin from "./ModalLogin";
 import { Link } from "react-router-dom";
 
-export default function Header({ status }) {
+export default function Header({ status, dashboard }) {
   const [modalLogin, setModalLogin] = useState(false);
   const menuItens = status;
 
@@ -17,6 +17,13 @@ export default function Header({ status }) {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
+                {dashboard === "true" && (
+                  <>
+                    <li>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                  </>
+                )}
                 {/* Se esta logado */}
                 {status === "logado" ? (
                   <>
