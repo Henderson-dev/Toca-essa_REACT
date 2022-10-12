@@ -45,6 +45,7 @@ export default function EventArtist() {
                 <CardRequest
                   key={index}
                   row={index+1}
+                  select={card.selecionar}
                   music={card.nome_da_musica_pedido}
                   artist={card.nome_do_artistabanda_pedido}
                 ></CardRequest>

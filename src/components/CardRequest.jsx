@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function CardRequest({ row, music, artist }) {
+export default function CardRequest({ row, music, artist, select }) {
   // Função para selecionar e deselecionar os cards
   function selectMusic(row) {
     let cardMusic = document.querySelector(".card-" + row);
@@ -15,7 +15,9 @@ export default function CardRequest({ row, music, artist }) {
     <>
       <article className="col-lg-4">
         <div
-          className={`box-request card-${row}`}
+          className={
+            select === true ? `box-request selected-card card-${row}` : `box-request card-${row}`
+          }
           onClick={() => {
             selectMusic(row);
           }}
