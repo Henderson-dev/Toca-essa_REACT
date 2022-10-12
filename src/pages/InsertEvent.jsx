@@ -7,7 +7,7 @@ import SetlistGroup from "../components/SetlistGroup";
 export default function InsertEvent() {
   return (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" dashboard="true"></Header>
       <HeroPage title="Novo Evento"></HeroPage>
       <FormNewEvent></FormNewEvent>
       <SetlistGroup page="newevent" title="Setlist do evento"></SetlistGroup>

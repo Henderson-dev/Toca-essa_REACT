@@ -4,7 +4,7 @@ import Header from "../components/Header";
 export default function MyCadastre() {
   return (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" dashboard="true"></Header>
     </>
   );
 }

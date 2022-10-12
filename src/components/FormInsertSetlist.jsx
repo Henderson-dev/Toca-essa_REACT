@@ -3,11 +3,13 @@ import React from "react";
 export default function FormInsertSetlist() {
   return (
     <>
-      <p>
-        Adicione aqui as músicas do seu repertório que deseja divulgar no
-        evento.
-      </p>
-      <h1>Adicionar música</h1>
+      <div className="box-content">
+        <p>
+          Adicione aqui as músicas do seu repertório que deseja divulgar no
+          evento.
+        </p>
+        <h1>Adicionar música</h1>
+      </div>
       <div className="form-setlist">
         <div className="box-form">
           <label htmlFor="nome_musica">
@@ -20,7 +22,7 @@ export default function FormInsertSetlist() {
           </label>
         </div>
         <div className="box-submit">
-          <a href="" className="bto-addmusic">
+          <span className="bto-addmusic">
             <svg
               width="20"
               height="22"
@@ -33,7 +35,7 @@ export default function FormInsertSetlist() {
                 fill="#A0168F"
               />
             </svg>
-          </a>
+          </span>
         </div>
       </div>
     </>
