@@ -28,5 +28,9 @@ export const pathsApi = [
     action: "inserir-comentario",
     route: "inserir-comentario",
   },
+  {
+    action: "selecionar-pedidos-musica",
+    route: "selecionar-pedidos-musica",
+  },
 ];
 //export default pathsApi;

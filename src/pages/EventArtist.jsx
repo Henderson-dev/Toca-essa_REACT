@@ -14,7 +14,7 @@ export default function EventArtist() {
 
   // Call API page ID in Wordpress
   //let pathApiData = "evento/" + idEvent.id;
-  let pathApiData = "evento/11";
+  let pathApiData = "evento/" + idEvent.id;
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
   console.log(pageData);
@@ -44,10 +44,11 @@ export default function EventArtist() {
               return (
                 <CardRequest
                   key={index}
-                  row={index+1}
+                  row={index + 1}
                   select={card.selecionar}
                   music={card.nome_da_musica_pedido}
                   artist={card.nome_do_artistabanda_pedido}
+                  idevent={idEvent.id}
                 ></CardRequest>
               );
             })}
