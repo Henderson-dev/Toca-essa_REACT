@@ -37,7 +37,6 @@ export default function EventCard({
                 <h3>{yearEvent}</h3>
                 <span>{hour} hs</span>
               </div>
-
           </Row>
         </Link>
       </article>
