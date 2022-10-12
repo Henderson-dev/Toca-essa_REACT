@@ -1,6 +1,37 @@
-import React from "react";
+import { React, useState } from "react";
+import uuid from "react-uuid";
+import { Row } from "reactstrap";
+import EvenInsertFlahsCard from "./EvenInsertFlahsCard";
 
 export default function FormInsertSetlist() {
+  const setlist = [];
+
+  const [data, setData] = useState(setlist);
+  const [music, setMusic] = useState();
+  const [artist, setArtist] = useState();
+
+  // Função apra deletar os cards da tela
+  const deleteCard = (id) => {
+    setData((prevCards) => {
+      return prevCards.filter((card) => id !== card.id);
+    });
+  };
+
+  // Insere os cards na tela
+  function insertCardsMusic(id, music, artist) {
+    const newItem = {
+      id: id,
+      music: music,
+      artist: artist,
+    };
+    const newItems = [...data, newItem];
+    setData(newItems);
+    // Clear inputs in form setlist
+    setMusic("");
+    setArtist("");
+    document.getElementById("nome_musica").focus();
+  }
+
   return (
     <>
       <div className="box-content">
@@ -14,15 +45,37 @@ export default function FormInsertSetlist() {
         <div className="box-form">
           <label htmlFor="nome_musica">
             <h2>Nome da música</h2>
-            <input type="text" name="nome_musica" maxLength="120" required />
+            <input
+              type="text"
+              id="nome_musica"
+              name="nome_musica"
+              maxLength="120"
+              required
+              value={music}
+              onChange={(e) => {
+                setMusic(e.target.value);
+              }}
+            />
           </label>
           <label htmlFor="nome_artista">
             <h2>Nome do artista / banda</h2>
-            <input type="text" name="nome_artista" maxLength="120" required />
+            <input
+              type="text"
+              name="nome_artista"
+              maxLength="120"
+              value={artist}
+              onChange={(e) => {
+                setArtist(e.target.value);
+              }}
+              required
+            />
           </label>
         </div>
         <div className="box-submit">
-          <span className="bto-addmusic">
+          <span
+            className="bto-addmusic"
+            onClick={() => insertCardsMusic(uuid(), music, artist)}
+          >
             <svg
               width="20"
               height="22"
@@ -37,6 +90,24 @@ export default function FormInsertSetlist() {
             </svg>
           </span>
         </div>
+      </div>
+
+      <div className="group-setlist">
+        <Row>
+          {data
+            .map((flashMusic, index) => {
+              return (
+                <EvenInsertFlahsCard
+                  key={flashMusic.id}
+                  music={flashMusic.music}
+                  artist={flashMusic.artist}
+                  id={flashMusic.id}
+                  deleteCard={deleteCard}
+                />
+              );
+            })
+            .reverse()}
+        </Row>
       </div>
     </>
   );
