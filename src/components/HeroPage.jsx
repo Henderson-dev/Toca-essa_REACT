@@ -1,8 +1,13 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function HeroPage({ title, nameArtist, goback }) {
+  // Pega o id do evento na url
+  const { id } = useParams();
+  const idArtist = { id };
+
   return (
     <>
       <section className="hero-page">
@@ -19,11 +24,11 @@ export default function HeroPage({ title, nameArtist, goback }) {
               <h2>Bem vindo</h2>
               <span>{nameArtist}</span>
               {goback === true ? (
-                <Link to="/dashboard" className="btn-hero">
+                <Link to={`/dashboard/${idArtist.id}`} className="btn-hero">
                   Voltar
                 </Link>
               ) : (
-                <Link to="/novo-evento" className="btn-hero">
+                <Link to={`/novo-evento/${idArtist.id}`} className="btn-hero">
                   Criar evento
                 </Link>
               )}

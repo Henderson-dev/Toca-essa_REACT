@@ -40,7 +40,7 @@ export default function ModalLogin(props) {
       <Modal.Body>
         <h2>Login do artista</h2>
         <div className="form-login form-default">
-          <form onSubmit={handleSubmit} action="/dashboard">
+          <form onSubmit={handleSubmit} action={`/dashboard/${props.idArtist}`}>
             <label htmlFor="email">
               <span>E-mail</span>
               <input

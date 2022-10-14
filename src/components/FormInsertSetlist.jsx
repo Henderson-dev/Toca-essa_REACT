@@ -5,7 +5,10 @@ import EvenInsertFlahsCard from "./EvenInsertFlahsCard";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import ScaleLoader from "react-spinners/ScaleLoader";
 
-export default function FormInsertSetlist() {
+export default function FormInsertSetlist({idArtist}) {
+
+
+  console.log(idArtist);
   const setlist = [];
   const [dataMusic, setDataMusic] = useState(setlist);
   const [music, setMusic] = useState();
@@ -54,7 +57,7 @@ export default function FormInsertSetlist() {
   const routeAPI = rootPath + pathsApi[0].route;
 
   // Função que envia os dados do novo evento
-  async function submitEvent() {
+  async function submitEvent(idArtist) {
     setMessage("loading");
     setStatus("");
 
@@ -63,7 +66,7 @@ export default function FormInsertSetlist() {
 
     // Set no id do evento
     dataEvent.append("nome_artista", "Nome do artista");
-    dataEvent.append("id_do_artista", "Id logado");
+    dataEvent.append("id_do_artista", idArtist);
     dataEvent.append(
       "nome_evento",
       document.querySelector("#nome_evento").value
@@ -213,7 +216,7 @@ export default function FormInsertSetlist() {
       </div>
       <Row>
         <div className="col-12 text-center">
-          <span className="submit-event btn-white" onClick={submitEvent}>
+          <span className="submit-event btn-white" onClick={()=>{submitEvent(idArtist)}}>
             Salvar evento
           </span>
 

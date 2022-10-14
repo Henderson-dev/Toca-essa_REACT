@@ -15,9 +15,8 @@ export default function EventCard({
   return (
     <>
       <article className="card-event">
-        <Link to={`show-evento/${eventid}`}>
+        <Link to={`/dashboard/${eventid}/show-evento/${eventid}`}>
           <Row>
-
             <div className="box-event-details">
               <h2>{event}</h2>
               <p>{address}</p>
@@ -30,13 +29,13 @@ export default function EventCard({
               </div>
             </div>
 
-              <div className="box-date">
-                <h2>
-                  {dayEvent} {monthEvent}
-                </h2>
-                <h3>{yearEvent}</h3>
-                <span>{hour} hs</span>
-              </div>
+            <div className="box-date">
+              <h2>
+                {dayEvent} {monthEvent}
+              </h2>
+              <h3>{yearEvent}</h3>
+              <span>{hour} hs</span>
+            </div>
           </Row>
         </Link>
       </article>

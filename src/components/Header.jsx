@@ -3,7 +3,7 @@ import { Container, Row } from "react-bootstrap";
 import ModalLogin from "./ModalLogin";
 import { Link } from "react-router-dom";
 
-export default function Header({ status, dashboard }) {
+export default function Header({ status, dashboard, idArtist }) {
   const [modalLogin, setModalLogin] = useState(false);
   const menuItens = status;
 
@@ -20,7 +20,7 @@ export default function Header({ status, dashboard }) {
                 {dashboard === "true" && (
                   <>
                     <li>
-                      <Link to="/dashboard">Dashboard</Link>
+                      <Link to={`/dashboard/${idArtist}`}>Dashboard</Link>
                     </li>
                   </>
                 )}
@@ -54,6 +54,7 @@ export default function Header({ status, dashboard }) {
       <ModalLogin
         show={modalLogin}
         onHide={() => setModalLogin(false)}
+        idArtist="001"
       ></ModalLogin>
     </header>
   );

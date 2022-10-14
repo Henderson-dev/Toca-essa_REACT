@@ -5,10 +5,15 @@ import HeroPage from "../components/HeroPage";
 import useFetch from "../backend/useFetch";
 import MensageScreen from "../components/MensageScreen";
 import { Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 
 export default function Dashboard() {
-  // Call API page ID in Wordpress
-  let pathApiData = "evento/";
+  // Pega o id do evento na url
+  const { id } = useParams();
+  const idArtist = { id };
+
+  // Call API page ID in Wordpress filter by id artist
+  let pathApiData = "evento?idartist="+idArtist.id;
 
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
@@ -91,18 +96,18 @@ export default function Dashboard() {
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" idArtist={idArtist.id}></Header>
       <MensageScreen msg="Carregando..." />
     </>
   ) : // Caso tenha erro na chamada da API
   error ? (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" idArtist={idArtist.id}></Header>
       <MensageScreen msg="Sem conexão com a API" error={error.response} />
     </>
   ) : (
     <>
-      <Header status="logado"></Header>
+      <Header status="logado" idArtist={idArtist.id}></Header>
       <HeroPage title="Próximos eventos" nameArtist="Michael Lenon"></HeroPage>
       <section className="list-events">
         <Container>

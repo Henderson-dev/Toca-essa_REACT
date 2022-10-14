@@ -7,7 +7,7 @@ import { rootPath, pathsApi } from "../backend/usePaths";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import FormInsertSetlist from "./FormInsertSetlist";
 
-export default function SetlistGroup({ idevento, dataSetlist, page, title }) {
+export default function SetlistGroup({ idevento, dataSetlist, page, title, idArtist }) {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
 
@@ -72,7 +72,7 @@ export default function SetlistGroup({ idevento, dataSetlist, page, title }) {
 
               {page === "newevent" ? (
                 <>
-                  <FormInsertSetlist></FormInsertSetlist>
+                  <FormInsertSetlist idArtist={idArtist}></FormInsertSetlist>
                 </>
               ) : (
                 <>
