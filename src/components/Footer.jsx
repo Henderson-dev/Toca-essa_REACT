@@ -34,15 +34,12 @@ export default function Footer() {
               <h2>Público</h2>
               <ul>
                 <li>
-                  <Link to="/">Crie sua conta</Link>
-                </li>
-                <li>
-                  <Link to="/como-funciona">Crie seus eventos</Link>
+                  <Link to="/">localize um evento</Link>
                 </li>
               </ul>
             </div>
             <div className="col-lg-4 d-flex justify-content-end">
-              <ul className="d-flex">
+              <ul className="d-flex list-social">
                 <li>
                   <a href="#" target="_blank">
                     <img src="./assets/images/rs_twitter.svg" alt="" />
@@ -66,7 +63,7 @@ export default function Footer() {
               </ul>
             </div>
           </Row>
-          <Row>
+          <Row className="credits">
             <div className="col-lg-8">
               <p>
                 Copyright © 2022 tocaessa.com.br - Todos os direitos reservados.
@@ -78,6 +75,7 @@ export default function Footer() {
                 <li>
                   <a href="#">Aviso de Privacidade</a>
                 </li>
+                <li><p>•</p></li>
                 <li>
                   <a href="#">Termos de Uso</a>
                 </li>

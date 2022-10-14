@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export default function HeroPage({ title }) {
+export default function HeroPage({ title, nameArtist, goback }) {
   return (
     <>
       <section className="hero-page">
@@ -15,10 +15,18 @@ export default function HeroPage({ title }) {
                 className="logo-internal"
               />
             </div>
-            <div className="col-md-6 d-flex flex-column align-items-end justify-content-center">
+            <div className="col-md-6 d-flex flex-column align-items-end justify-content-end">
               <h2>Bem vindo</h2>
-              <span>Michael Lenon</span>
-              <Link to="/novo-evento">Criar evento</Link>
+              <span>{nameArtist}</span>
+              {goback === true ? (
+                <Link to="/dashboard" className="btn-hero">
+                  Voltar
+                </Link>
+              ) : (
+                <Link to="/novo-evento" className="btn-hero">
+                  Criar evento
+                </Link>
+              )}
             </div>
           </Row>
           <div className="box-title-hero">

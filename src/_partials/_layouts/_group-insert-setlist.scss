@@ -1,20 +1,9 @@
 .group-setlist {
   display: block;
   padding-top: 62px;
-  margin: 0 auto 120px auto;
+  margin: 0 auto 60px auto;
   width: 80% !important;
   position: relative;
-  &::after {
-    content: "";
-    display: block;
-    width: 52px;
-    height: 116px;
-    position: absolute;
-    top: -15px;
-    left: -65px;
-    background-image: url("../../../assets/images/arrow_bto-setlist.svg");
-    background-repeat: no-repeat;
-  }
   .insert-card-music {
     padding: 5px 5px 20px 25px;
     margin-bottom: 15px;
@@ -49,5 +38,18 @@
         color: $white;
       }
     }
+  }
+}
+.active-arrow {
+  &::after {
+    content: "";
+    display: block;
+    width: 52px;
+    height: 116px;
+    position: absolute;
+    top: -15px;
+    left: -65px;
+    background-image: url("../../../assets/images/arrow_bto-setlist.svg");
+    background-repeat: no-repeat;
   }
 }

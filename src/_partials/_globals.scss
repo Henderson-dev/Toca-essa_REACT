@@ -49,7 +49,7 @@ ul {
   padding: 0;
 }
 
-.btn-default{
+.btn-default {
   position: relative;
   display: block;
   height: 61px;
@@ -59,14 +59,37 @@ ul {
   font-weight: 600;
   font-size: 20px;
   line-height: 100%;
-  text-align: center;  
+  text-align: center;
   border-radius: 50px;
   text-decoration: none;
 }
 
-.btn-white{
-  background: #FFFFFF;
+.submit-event {
+  display: block;
+  height: 61px;
+  padding: 18px 45px;
+  width: fit-content;
+  font-family: $font-titles;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #a0168f;
+  text-align: center;
+  border-radius: 50px;
+  text-decoration: none;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn-white {
+  background: #ffffff;
   color: $primary;
+  &:hover {
+    background-color: $pink;
+    color: #fff;
+  }
 }
 
 // Mixins

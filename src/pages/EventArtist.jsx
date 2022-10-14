@@ -37,31 +37,43 @@ export default function EventArtist() {
   ) : (
     <>
       <Header status="logado" dashboard="true"></Header>
-      <HeroPage title="Pedidos recebidos"></HeroPage>
+      <HeroPage title="Pedidos recebidos" nameArtist="Michael Lenon"></HeroPage>
       <section className="list-requests">
         <Container>
           <Row className="d-flex list-request">
-            {pageData.acf.lista_de_pedidos.map((card, index) => {
-              return (
-                <CardRequest
-                  key={index}
-                  row={index + 1}
-                  select={card.selecionar}
-                  music={card.nome_da_musica_pedido}
-                  artist={card.nome_do_artistabanda_pedido}
-                  idevent={idEvent.id}
-                ></CardRequest>
-              );
-            }).reverse()}
+            {pageData.acf.lista_de_pedidos ? (
+              <>
+                {pageData.acf.lista_de_pedidos
+                  .map((card, index) => {
+                    return (
+                      <CardRequest
+                        key={index}
+                        row={index + 1}
+                        select={card.selecionar}
+                        music={card.nome_da_musica_pedido}
+                        artist={card.nome_do_artistabanda_pedido}
+                        idevent={idEvent.id}
+                      ></CardRequest>
+                    );
+                  })
+                  .reverse()}
+              </>
+            ) : (
+              <>
+                <h2>Ainda não tem nenhum pedido !</h2>
+              </>
+            )}
           </Row>
         </Container>
       </section>
-      <SetlistGroup
-            idevento={id}
-            dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
-            page="artist"
-            title="Setlist de hoje"
-          ></SetlistGroup>      
+      {pageData.acf.lista_de_musicas_do_repertorio && (
+        <SetlistGroup
+          idevento={id}
+          dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
+          page="artist"
+          title="Setlist de hoje"
+        ></SetlistGroup>
+      )}
     </>
   );
 }

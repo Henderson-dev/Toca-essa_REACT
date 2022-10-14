@@ -5,7 +5,7 @@
   height: 228px;
   .container {
     position: relative;
-    .logo-internal{
+    .logo-internal {
       display: block;
     }
     .box-title-hero {
@@ -23,6 +23,42 @@
         line-height: 110%;
         color: #ffffff;
       }
+    }
+  }
+  h2 {
+    font-family: $font-titles;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 110%;
+    text-align: right;
+    color: #ffffff;
+  }
+  span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #ffffff;
+    margin-bottom: 26px;
+  }
+  .btn-hero {
+    font-family: $font-titles;
+    background: #ffffff;
+    border-radius: 50px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    color: #a0168f;
+    padding: 12px 40px 13px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: #ec008c;
+      color: #ffffff;
     }
   }
 }

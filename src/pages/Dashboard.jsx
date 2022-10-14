@@ -29,12 +29,51 @@ export default function Dashboard() {
         case "01":
           nameMonth = "JAM";
           break;
+
+        case "02":
+          nameMonth = "FEV";
+          break;
+
+        case "03":
+          nameMonth = "MAR";
+          break;
+
+        case "04":
+          nameMonth = "ABR";
+          break;
+
+        case "05":
+          nameMonth = "MAI";
+          break;
+
+        case "06":
+          nameMonth = "JUN";
+          break;
+
+        case "07":
+          nameMonth = "JUL";
+          break;
+
+        case "08":
+          nameMonth = "AGO";
+          break;
+
         case "09":
           nameMonth = "SET";
           break;
+
         case "10":
           nameMonth = "OUT";
           break;
+
+        case "11":
+          nameMonth = "NOV";
+          break;
+
+        case "12":
+          nameMonth = "DEZ";
+          break;
+
         default:
           nameMonth = "";
       }
@@ -64,36 +103,36 @@ export default function Dashboard() {
   ) : (
     <>
       <Header status="logado"></Header>
-      <HeroPage title="Próximos eventos"></HeroPage>
+      <HeroPage title="Próximos eventos" nameArtist="Michael Lenon"></HeroPage>
       <section className="list-events">
         <Container>
-        {pageData
-          .map((cardevent) => {
-            let address = `
+          {pageData
+            .map((cardevent) => {
+              let address = `
             ${cardevent.acf.rua}, 
             ${cardevent.acf.numero} 
             ${cardevent.acf.complemento} 
             ${cardevent.acf.bairro}
             `;
-            let addressPlace = `
+              let addressPlace = `
             ${cardevent.acf.cidade} 
             ${cardevent.acf.estado} 
-            `;            
-            return (
-              <EventCard
-                key={cardevent.id}
-                eventid={cardevent.id}
-                event={cardevent.acf.nome_do_evento}
-                address={address}
-                addressPlace={addressPlace}
-                dayEvent={formatDate(cardevent.acf.data, "day")}
-                monthEvent={formatDate(cardevent.acf.data, "month")}
-                yearEvent={formatDate(cardevent.acf.data, "year")}
-                hour={cardevent.acf.hora}
-              />
-            );
-          })
-          .reverse()}
+            `;
+              return (
+                <EventCard
+                  key={cardevent.id}
+                  eventid={cardevent.id}
+                  event={cardevent.acf.nome_do_evento}
+                  address={address}
+                  addressPlace={addressPlace}
+                  dayEvent={formatDate(cardevent.acf.data, "day")}
+                  monthEvent={formatDate(cardevent.acf.data, "month")}
+                  yearEvent={formatDate(cardevent.acf.data, "year")}
+                  hour={cardevent.acf.hora}
+                />
+              );
+            })
+            .reverse()}
         </Container>
       </section>
     </>

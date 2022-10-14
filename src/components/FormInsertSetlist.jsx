@@ -16,7 +16,13 @@ export default function FormInsertSetlist() {
   // Função apra deletar os cards da tela
   const deleteCard = (id) => {
     setDataMusic((prevCards) => {
-      return prevCards.filter((card) => id !== card.id);
+      let addArrow = document.querySelector(".group-setlist");
+      let returnCards = prevCards.filter((card) => id !== card.id);
+      // Remove a seta indicadora do setlist
+      if (returnCards.length === 0) {
+        addArrow.classList.remove("active-arrow");
+      }
+      return returnCards;
     });
   };
 
@@ -33,6 +39,8 @@ export default function FormInsertSetlist() {
     setMusic("");
     setArtist("");
     document.getElementById("nome_musica").focus();
+    let addArrow = document.querySelector(".group-setlist");
+    addArrow.classList.add("active-arrow");
   }
 
   // Esconde mensagem na tela depois de alguns segundos
@@ -205,8 +213,8 @@ export default function FormInsertSetlist() {
       </div>
       <Row>
         <div className="col-12 text-center">
-          <span className="submit-event" onClick={submitEvent}>
-            Enviar
+          <span className="submit-event btn-white" onClick={submitEvent}>
+            Salvar evento
           </span>
 
           <div className="box-mensage">
