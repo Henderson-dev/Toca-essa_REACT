@@ -71,13 +71,7 @@ export default function EventInsertMusic({
   //
   //useEffect(() => {}, []);
 
-  const setlist = [
-    {
-      id: uuid(),
-      music: "Michelle",
-      artist: "The Beatles",
-    },
-  ];
+  const setlist = [];
 
   const [data, setData] = useState(setlist);
 
@@ -125,7 +119,10 @@ export default function EventInsertMusic({
               <p>{enventname}</p>
               <div className="box-adress">
                 <h2>{placename}</h2>
-                <p>{address}, {addressnumber} {complement} {bairro} - {city} - {state}</p>
+                <p>
+                  {address}, {addressnumber} {complement} {bairro} - {city} -{" "}
+                  {state}
+                </p>
               </div>
               <div className="form-do-music">
                 <h2>
@@ -185,6 +182,8 @@ export default function EventInsertMusic({
             </h1>
           </div>
           <Row>
+            {data.length > 0 ? (
+              <>
             {data
               .map((flashMusic, index) => {
                 return (
@@ -198,6 +197,13 @@ export default function EventInsertMusic({
                 );
               })
               .reverse()}
+              </>
+            ):(
+              <>
+              <h3>Você ainda não fez nenhum pedido!</h3>
+              </>
+            )}
+
           </Row>
         </Container>
       </section>
