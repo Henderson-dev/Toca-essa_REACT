@@ -61,4 +61,25 @@
       color: #ffffff;
     }
   }
+  .box-event-data {
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    h3 {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      color: #ffffff;
+    }
+    span {
+      border-bottom: 2px solid $white;
+      padding-bottom: 5px;
+      margin-bottom: 8px;
+      width: 100%;
+      text-align: left;
+    }
+  }
 }

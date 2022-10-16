@@ -25,7 +25,7 @@ export default function EventArtist() {
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
-      <Header status="logado" dashboard="true" ></Header>
+      <Header status="logado" dashboard="true"></Header>
       <MensageScreen msg="Carregando..." />
     </>
   ) : // Caso tenha erro na chamada da API
@@ -36,8 +36,18 @@ export default function EventArtist() {
     </>
   ) : (
     <>
-      <Header status="logado" dashboard="true" idArtist={pageData.acf.id_do_artista}></Header>
-      <HeroPage title="Pedidos recebidos" nameArtist="Michael Lenon" idArtist={pageData.acf.id_do_artista} nameEvent={pageData.acf.nome_do_evento}></HeroPage>
+      <Header
+        status="logado"
+        dashboard="true"
+        idArtist={pageData.acf.id_do_artista}
+      ></Header>
+      <HeroPage
+        title="Pedidos recebidos"
+        nameArtist="Michael Lenon"
+        idArtist={pageData.acf.id_do_artista}
+        nameEvent={pageData.acf.nome_do_evento}
+        dataEvent={pageData.acf}
+      ></HeroPage>
       <section className="list-requests">
         <Container>
           <Row className="d-flex list-request">
