@@ -18,14 +18,14 @@ export default function EventArtist() {
   let pathApiData = "evento/" + idEvent.id;
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
-  console.log(pageData);
+  //console.log(pageData);
 
   //const requestsMusics = pageData.acf.lista_de_pedidos;
   //console.log(requestsMusics);
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
-      <Header status="logado" dashboard="true"></Header>
+      <Header status="logado" dashboard="true" ></Header>
       <MensageScreen msg="Carregando..." />
     </>
   ) : // Caso tenha erro na chamada da API
@@ -36,8 +36,8 @@ export default function EventArtist() {
     </>
   ) : (
     <>
-      <Header status="logado" dashboard="true"></Header>
-      <HeroPage title="Pedidos recebidos" nameArtist="Michael Lenon"></HeroPage>
+      <Header status="logado" dashboard="true" idArtist={pageData.acf.id_do_artista}></Header>
+      <HeroPage title="Pedidos recebidos" nameArtist="Michael Lenon" idArtist={pageData.acf.id_do_artista} nameEvent={pageData.acf.nome_do_evento}></HeroPage>
       <section className="list-requests">
         <Container>
           <Row className="d-flex list-request">

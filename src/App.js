@@ -24,7 +24,7 @@ function App(props) {
           <Route path="/dashboard/:id" element={<Dashboard />} />
           <Route path="/novo-evento/:id" element={<InsertEvent />} />
           <Route
-            path="/dashboard/:id/show-evento/:id"
+            path="/dashboard/show-evento/:id"
             element={<EventArtist />}
           />
           <Route path="/evento/:id" element={<EventPublic />} />

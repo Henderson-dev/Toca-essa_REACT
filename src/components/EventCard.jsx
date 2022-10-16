@@ -15,7 +15,7 @@ export default function EventCard({
   return (
     <>
       <article className="card-event">
-        <Link to={`/dashboard/${eventid}/show-evento/${eventid}`}>
+        <Link to={`/dashboard/show-evento/${eventid}`}>
           <Row>
             <div className="box-event-details">
               <h2>{event}</h2>

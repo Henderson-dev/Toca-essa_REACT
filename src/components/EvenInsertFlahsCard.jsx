@@ -11,10 +11,12 @@ export default function EvenInsertFlahsCard({ id, music, artist, deleteCard }) {
           </div>
           <div className="box-close">
             <img
-              src="./assets/images/close.svg"
+              src="../assets/images/close.svg"
               alt="Remover música"
               className="remove-card"
-              onClick={()=>{deleteCard(id)}}
+              onClick={() => {
+                deleteCard(id);
+              }}
             />
           </div>
         </article>

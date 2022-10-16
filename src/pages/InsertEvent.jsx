@@ -17,6 +17,7 @@ export default function InsertEvent() {
         title="Novo Evento"
         nameArtist="Michael Lenon"
         goback={true}
+        idArtist={idArtist.id}
       ></HeroPage>
       <FormNewEvent></FormNewEvent>
       <SetlistGroup

@@ -13,12 +13,13 @@ export default function Dashboard() {
   const idArtist = { id };
 
   // Call API page ID in Wordpress filter by id artist
-  let pathApiData = "evento?idartist="+idArtist.id;
+  let pathApiData = "evento?idartist=" + idArtist.id;
 
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
   //console.log(pageData);
 
+  // Formata data para o formato PT-BR
   function formatDate(dt, prop) {
     let eventMonth = "";
     let nameMonth = "";
@@ -108,7 +109,11 @@ export default function Dashboard() {
   ) : (
     <>
       <Header status="logado" idArtist={idArtist.id}></Header>
-      <HeroPage title="Próximos eventos" nameArtist="Michael Lenon"></HeroPage>
+      <HeroPage
+        title="Próximos eventos"
+        nameArtist="Michael Lenon"
+        idArtist={idArtist.id}
+      ></HeroPage>
       <section className="list-events">
         <Container>
           {pageData
