@@ -9,7 +9,7 @@ export default function Footer() {
         <Container>
           <Row>
             <div className="col-lg-2">
-              <img src="./assets/images/logo_white_toca-essa.svg" alt="" />
+              <img src="../assets/images/logo_white_toca-essa.svg" alt="" />
             </div>
             <div className="col-lg-2">
               <ul>
@@ -42,22 +42,22 @@ export default function Footer() {
               <ul className="d-flex list-social">
                 <li>
                   <a href="#" target="_blank">
-                    <img src="./assets/images/rs_twitter.svg" alt="" />
+                    <img src="../assets/images/rs_twitter.svg" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="#" target="_blank">
-                    <img src="./assets/images/rs_youtube.svg" alt="" />
+                    <img src="../assets/images/rs_youtube.svg" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="#" target="_blank">
-                    <img src="./assets/images/rs_facebook.svg" alt="" />
+                    <img src="../assets/images/rs_facebook.svg" alt="" />
                   </a>
                 </li>
                 <li>
                   <a href="#" target="_blank">
-                    <img src="./assets/images/rs_instagram.svg" alt="" />
+                    <img src="../assets/images/rs_instagram.svg" alt="" />
                   </a>
                 </li>
               </ul>
@@ -75,7 +75,9 @@ export default function Footer() {
                 <li>
                   <a href="#">Aviso de Privacidade</a>
                 </li>
-                <li><p>•</p></li>
+                <li>
+                  <p>•</p>
+                </li>
                 <li>
                   <a href="#">Termos de Uso</a>
                 </li>

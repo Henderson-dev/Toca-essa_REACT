@@ -7,6 +7,7 @@ import formatDate from "../funtions/DateFormat";
 import MensageScreen from "../components/MensageScreen";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import useData from "../backend/useData";
 
 export default function Dashboard() {
   // Pega o id do evento na url
@@ -17,8 +18,14 @@ export default function Dashboard() {
   let pathApiData = "evento?idartist=" + idArtist.id;
 
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
-  const { data: pageData, error, isLoad } = useFetch(dataFromPage);
-  //console.log(pageData);
+  const {
+    data: pageData,
+    todayEvent,
+    nextEvent,
+    closeEvents,
+    error,
+    isLoad,
+  } = useData(dataFromPage);
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
@@ -41,7 +48,40 @@ export default function Dashboard() {
       ></HeroPage>
       <section className="list-events">
         <Container>
-          {pageData
+          {todayEvent && (
+            <>
+              {todayEvent
+                .map((cardevent) => {
+                  let address = `
+            ${cardevent.acf.rua}, 
+            ${cardevent.acf.numero} 
+            ${cardevent.acf.complemento} 
+            ${cardevent.acf.bairro}
+            `;
+                  let addressPlace = `
+            ${cardevent.acf.cidade} 
+            ${cardevent.acf.estado} 
+            `;
+                  return (
+                    <EventCard
+                      key={cardevent.id}
+                      eventid={cardevent.id}
+                      event={cardevent.acf.nome_do_evento}
+                      address={address}
+                      addressPlace={addressPlace}
+                      dayEvent={formatDate(cardevent.acf.data, "day")}
+                      monthEvent={formatDate(cardevent.acf.data, "month")}
+                      yearEvent={formatDate(cardevent.acf.data, "year")}
+                      hour={cardevent.acf.hora}
+                    />
+                  );
+                })
+                .reverse()}
+            </>
+          )}
+          <hr></hr>
+          <h2>Próximos eventos</h2>
+          {nextEvent
             .map((cardevent) => {
               let address = `
             ${cardevent.acf.rua}, 
@@ -68,6 +108,33 @@ export default function Dashboard() {
               );
             })
             .reverse()}
+          <hr></hr>
+          <h2>Eventos finalizados</h2>
+          {closeEvents.map((cardevent) => {
+            let address = `
+            ${cardevent.acf.rua}, 
+            ${cardevent.acf.numero} 
+            ${cardevent.acf.complemento} 
+            ${cardevent.acf.bairro}
+            `;
+            let addressPlace = `
+            ${cardevent.acf.cidade} 
+            ${cardevent.acf.estado} 
+            `;
+            return (
+              <EventCard
+                key={cardevent.id}
+                eventid={cardevent.id}
+                event={cardevent.acf.nome_do_evento}
+                address={address}
+                addressPlace={addressPlace}
+                dayEvent={formatDate(cardevent.acf.data, "day")}
+                monthEvent={formatDate(cardevent.acf.data, "month")}
+                yearEvent={formatDate(cardevent.acf.data, "year")}
+                hour={cardevent.acf.hora}
+              />
+            );
+          })}
         </Container>
       </section>
     </>
