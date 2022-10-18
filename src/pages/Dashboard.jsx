@@ -73,6 +73,7 @@ export default function Dashboard() {
                       monthEvent={formatDate(cardevent.acf.data, "month")}
                       yearEvent={formatDate(cardevent.acf.data, "year")}
                       hour={cardevent.acf.hora}
+                      status="today"
                     />
                   );
                 })
@@ -132,6 +133,7 @@ export default function Dashboard() {
                 monthEvent={formatDate(cardevent.acf.data, "month")}
                 yearEvent={formatDate(cardevent.acf.data, "year")}
                 hour={cardevent.acf.hora}
+                status="finish"
               />
             );
           })}

@@ -4,7 +4,14 @@
   margin-bottom: 12px;
   -webkit-box-shadow: -5px 5px 0px -1px rgba(222, 219, 219, 0.57);
   box-shadow: -5px 5px 0px -1px rgba(222, 219, 219, 0.57);
+  position: relative;
 
+  a {
+    &:hover::after {
+      background-color: #ecf6ff;
+      opacity: 0.4;
+    }
+  }
   .row {
     display: flex;
     justify-content: space-between;
@@ -12,7 +19,7 @@
 
   .box-event-details {
     padding: 17px 20px 17px 30px;
-    width: fit-content;
+    width: 50%;
     h2 {
       font-style: normal;
       font-weight: 600;
@@ -33,7 +40,13 @@
     }
   }
 
+  .bto-start {
+    position: absolute;
+    z-index: 10;
+  }
+
   .box-date {
+    z-index: 10;
     background-color: #000;
     width: 120px;
     display: flex;

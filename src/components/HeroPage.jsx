@@ -10,6 +10,7 @@ export default function HeroPage({
   idArtist,
   nameEvent,
   dataEvent,
+  startEvent,
 }) {
   return (
     <>
@@ -43,13 +44,24 @@ export default function HeroPage({
                       <Link to={`/dashboard/${idArtist}`} className="btn-hero">
                         Voltar
                       </Link>
+                    ) : startEvent === "true" ? (
+                      <>
+                        <Link
+                          to={`/novo-evento/${idArtist}`}
+                          className="btn-hero"
+                        >
+                          Iniciar evento
+                        </Link>
+                      </>
                     ) : (
-                      <Link
-                        to={`/novo-evento/${idArtist}`}
-                        className="btn-hero"
-                      >
-                        Criar evento
-                      </Link>
+                      <>
+                        <Link
+                          to={`/novo-evento/${idArtist}`}
+                          className="btn-hero"
+                        >
+                          Criar evento
+                        </Link>
+                      </>
                     )}
                   </div>
                 </div>
