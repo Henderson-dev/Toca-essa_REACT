@@ -5,31 +5,31 @@ export const rootPath =
 // Caminhos dos endpoints para executar uma ação via POST no back-end
 export const pathsApi = [
   {
-    action: "insert-event",
+    action: "[0] insert-event",
     route: "inserir-evento",
   },
   {
-    action: "iniciar-evento",
+    action: "[1] iniciar-evento",
     route: "iniciar-evento",
   },
   {
-    action: "insert-music",
+    action: "[2] insert-music",
     route: "inserir-musica",
   },
   {
-    action: "insert-feedback",
+    action: "[3] insert-feedback",
     route: "inserir-feedback",
   },
   {
-    action: "encerrar-evento",
+    action: "[4] encerrar-evento",
     route: "encerrar-evento",
   },
   {
-    action: "inserir-comentario",
+    action: "[5] inserir-comentario",
     route: "inserir-comentario",
   },
   {
-    action: "selecionar-pedidos-musica",
+    action: "[6] selecionar-pedidos-musica",
     route: "selecionar-pedidos-musica",
   },
 ];

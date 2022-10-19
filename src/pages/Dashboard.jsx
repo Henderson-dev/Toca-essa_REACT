@@ -2,7 +2,6 @@ import React from "react";
 import EventCard from "../components/EventCard";
 import Header from "../components/Header";
 import HeroPage from "../components/HeroPage";
-import useFetch from "../backend/useFetch";
 import formatDate from "../funtions/DateFormat";
 import MensageScreen from "../components/MensageScreen";
 import { Container } from "react-bootstrap";
@@ -16,7 +15,6 @@ export default function Dashboard() {
 
   // Call API page ID in Wordpress filter by id artist
   let pathApiData = "evento?idartist=" + idArtist.id;
-
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const {
     data: pageData,

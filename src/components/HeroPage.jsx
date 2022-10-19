@@ -1,9 +1,11 @@
-import React from "react";
+import {React, useState} from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import formatDate from "../funtions/DateFormat";
+import { rootPath, pathsApi } from "../backend/usePaths";
 
 export default function HeroPage({
+  idevent,
   title,
   nameArtist,
   goback,
@@ -11,8 +13,46 @@ export default function HeroPage({
   nameEvent,
   dataEvent,
   startEvent,
+  closeEvent,
 }) {
-  console.log(startEvent);
+
+  const [statusAction, setStatusAction] = useState("");
+
+  // Define o caminho do endpoint de inserção de evento no back-end
+  const routeAPI = rootPath + pathsApi[4].route;
+
+  async function closeThisEvent(idevent) {
+    console.log(idevent);
+    console.log(routeAPI);
+
+    // Inicia varial que vai armazenar os dados do formulário
+    const dataEvent = new FormData();
+    // Set no id do evento
+    dataEvent.append("id_evento", idevent);
+
+    try {
+      let res = await fetch(routeAPI, {
+        method: "POST",
+        body: dataEvent,
+      }).then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          setStatusAction("ok");
+          // setMessage("");
+          // timeMessage();
+          window.location.href = "/dashboard/evento-realizado/" + idevent;
+        } else {
+          setStatusAction("erro");
+          // setMessage("");
+          // timeMessage();
+        }
+      });
+    } catch (err) {
+      setStatusAction("erro");
+      //console.log(err);
+    }
+  }
+
   return (
     <>
       <section className="hero-page">
@@ -29,7 +69,10 @@ export default function HeroPage({
               <>
                 <div className="col-md-9 d-flex flex-row align-items-end justify-content-end">
                   <div className="box-event-data">
-                    <span>Evento</span>
+                    <span>
+                      Evento{startEvent === true && " em andamento"}
+                      {closeEvent === true && " realizado"}
+                    </span>
                     <div className="box-info">
                       <h3>{nameEvent}</h3>
                       {formatDate(dataEvent.data, "day")}
@@ -48,8 +91,11 @@ export default function HeroPage({
                     ) : startEvent === true ? (
                       <>
                         <Link
-                          to={`/novo-evento/${idArtist}`}
+                          to=""
                           className="btn-hero"
+                          onClick={() => {
+                            closeThisEvent(idevent);
+                          }}
                         >
                           Encerrar evento
                         </Link>

@@ -42,12 +42,13 @@ export default function EventArtist() {
         idArtist={pageData.acf.id_do_artista}
       ></Header>
       <HeroPage
+        idevent={idEvent.id}
         title="Pedidos recebidos"
         nameArtist="Michael Lenon"
         idArtist={pageData.acf.id_do_artista}
         nameEvent={pageData.acf.nome_do_evento}
         dataEvent={pageData.acf}
-        startEvent={pageData.acf.evento_iniciar === 1 ? "true" : "false"}
+        startEvent={pageData.acf.evento_iniciar}
       ></HeroPage>
       <section className="list-requests">
         <Container>

@@ -44,6 +44,7 @@ export default function ArtistAferEvent() {
         nameEvent={pageData.acf.nome_do_evento}
         dataEvent={pageData.acf}
         goback={true}
+        closeEvent={pageData.acf.evento_encerrado}
       ></HeroPage>
       <section className="list-requests">
         <Container>

@@ -80,6 +80,7 @@ export default function EventCard({
             <div className="col-md-3 d-flex align-items-center">
               <div className="bto-start">
                 <span
+                  className="bto-start-event"
                   onClick={() => {
                     startEvent(eventid);
                   }}

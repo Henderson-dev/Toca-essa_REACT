@@ -43,6 +43,33 @@
   .bto-start {
     position: absolute;
     z-index: 10;
+    .bto-start-event {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 100%;
+      text-align: center;
+      color: #ffffff;
+      background: #2d97fa;
+      border-radius: 50px;
+      padding: 6px 40px 10px;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: $primary;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 90px;
+        left: -60px;
+        top: 4px;
+        background-image: url("../images/arrow-purple.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+      }
+    }
   }
 
   .box-date {

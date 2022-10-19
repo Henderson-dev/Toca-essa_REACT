@@ -31,9 +31,9 @@ export default function useData(url) {
   function getEventToday(dataEv) {
     if (dataEv) {
       const curDate = currentDate();
-      const todayEvent = dataEv.filter(
-        (listEvent) => listEvent.acf.data.toLowerCase() === curDate
-      );
+      const todayEvent = dataEv
+        .filter((listEvent) => listEvent.acf.data.toLowerCase() === curDate)
+        .filter((listEvent) => listEvent.acf.evento_encerrado === false);
       return setTodayEvent(todayEvent);
     }
   }
