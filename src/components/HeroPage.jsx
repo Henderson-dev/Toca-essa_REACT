@@ -12,6 +12,7 @@ export default function HeroPage({
   dataEvent,
   startEvent,
 }) {
+  console.log(startEvent);
   return (
     <>
       <section className="hero-page">
@@ -44,7 +45,16 @@ export default function HeroPage({
                       <Link to={`/dashboard/${idArtist}`} className="btn-hero">
                         Voltar
                       </Link>
-                    ) : startEvent === "true" ? (
+                    ) : startEvent === true ? (
+                      <>
+                        <Link
+                          to={`/novo-evento/${idArtist}`}
+                          className="btn-hero"
+                        >
+                          Encerrar evento
+                        </Link>
+                      </>
+                    ) : startEvent === false ? (
                       <>
                         <Link
                           to={`/novo-evento/${idArtist}`}

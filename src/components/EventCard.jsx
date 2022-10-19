@@ -1,6 +1,7 @@
-import React from "react";
+import { React, useState } from "react";
 import { Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { rootPath, pathsApi } from "../backend/usePaths";
 
 export default function EventCard({
   eventid,
@@ -13,6 +14,43 @@ export default function EventCard({
   hour,
   status,
 }) {
+  const [statusAction, setStatusAction] = useState("");
+  // const [message, setMessage] = useState("");
+
+  // Define o caminho do endpoint de inserção de evento no back-end
+  const routeAPI = rootPath + pathsApi[1].route;
+
+  async function startEvent(idevent) {
+    console.log(routeAPI);
+
+    // Inicia varial que vai armazenar os dados do formulário
+    const dataEvent = new FormData();
+    // Set no id do evento
+    dataEvent.append("id_evento", idevent);
+
+    try {
+      let res = await fetch(routeAPI, {
+        method: "POST",
+        body: dataEvent,
+      }).then((response) => {
+        console.log(response);
+        if (response.status === 200) {
+          setStatusAction("ok");
+          // setMessage("");
+          // timeMessage();
+          window.location.href = "/dashboard/show-evento/" + idevent;
+        } else {
+          setStatusAction("erro");
+          // setMessage("");
+          // timeMessage();
+        }
+      });
+    } catch (err) {
+      setStatusAction("erro");
+      //console.log(err);
+    }
+  }
+
   return (
     <>
       <article className="card-event card">
@@ -41,7 +79,13 @@ export default function EventCard({
           {status === "today" && (
             <div className="col-md-3 d-flex align-items-center">
               <div className="bto-start">
-                <Link to="/novo-evento">Iniciar evento</Link>
+                <span
+                  onClick={() => {
+                    startEvent(eventid);
+                  }}
+                >
+                  Iniciar evento
+                </span>
               </div>
             </div>
           )}
