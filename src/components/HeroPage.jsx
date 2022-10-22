@@ -1,4 +1,4 @@
-import {React, useState} from "react";
+import { React, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import formatDate from "../funtions/DateFormat";
@@ -15,18 +15,20 @@ export default function HeroPage({
   startEvent,
   closeEvent,
 }) {
-
   const [statusAction, setStatusAction] = useState("");
+
+  // Define data e hora do ecnerramento do evento
+  const dataClose = new Date();
 
   // Define o caminho do endpoint de inserção de evento no back-end
   const routeAPI = rootPath + pathsApi[4].route;
 
   async function closeThisEvent(idevent) {
-
     // Inicia varial que vai armazenar os dados do formulário
     const dataEvent = new FormData();
     // Set no id do evento
     dataEvent.append("id_evento", idevent);
+    dataEvent.append("data_close", dataClose);
 
     try {
       let res = await fetch(routeAPI, {

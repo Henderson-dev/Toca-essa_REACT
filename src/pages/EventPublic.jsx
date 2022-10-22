@@ -33,6 +33,7 @@ export default function EventPublic() {
             event={pageData.acf.nome_do_evento}
             datevent={pageData.acf.data}
             hourevent={pageData.acf.hora}
+            dateClose={pageData.acf.dados_encerramento}
           ></EventClosed>
         </>
       ) : pageData.acf.evento_iniciar === true ? (

@@ -25,8 +25,6 @@ export default function CardRequest({ row, music, artist, select, idevent }) {
     data.append("numero_musica", row);
     data.append("acao", actionCard);
 
-    //console.log(idevent + " " + row + " " + actionCard);
-
     try {
       let res = await fetch(routeAPI, {
         method: "POST",
