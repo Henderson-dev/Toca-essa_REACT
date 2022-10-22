@@ -17,28 +17,23 @@ import Context from "./funtions/Context";
 function App(props) {
   return (
     <>
-      <Context.Provider>
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/como-funciona" element={<About />} />
-            <Route path="/evento/:id" element={<EventPublic />} />
-            <Route path="/meus-dados" element={<MyCadastre />} />
-            <Route path="/dashboard/:id" element={<Dashboard />} />
-            <Route path="/novo-evento/:id" element={<InsertEvent />} />
-            <Route
-              path="/dashboard/show-evento/:id"
-              element={<EventArtist />}
-            />
-            <Route
-              path="/dashboard/evento-realizado/:id"
-              element={<ArtistAferEvent />}
-            />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer></Footer>
-        </BrowserRouter>
-      </Context.Provider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/como-funciona" element={<About />} />
+          <Route path="/evento/:id" element={<EventPublic />} />
+          <Route path="/meus-dados" element={<MyCadastre />} />
+          <Route path="/dashboard/:id" element={<Dashboard />} />
+          <Route path="/novo-evento/:id" element={<InsertEvent />} />
+          <Route path="/dashboard/show-evento/:id" element={<EventArtist />} />
+          <Route
+            path="/dashboard/evento-realizado/:id"
+            element={<ArtistAferEvent />}
+          />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </>
   );
 }
