@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import EventCard from "../components/EventCard";
 import Header from "../components/Header";
 import HeroPage from "../components/HeroPage";
@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import useData from "../backend/useData";
 
 export default function Dashboard() {
+
   // Pega o id do evento na url
   const { id } = useParams();
   const idArtist = { id };
@@ -38,50 +39,78 @@ export default function Dashboard() {
     </>
   ) : (
     <>
-      <Header status="logado" idArtist={idArtist.id}></Header>
-      <HeroPage
-        title="Próximos eventos"
-        nameArtist="Michael Lenon"
-        idArtist={idArtist.id}
-      ></HeroPage>
-      <section className="list-events">
-        <Container>
-          {todayEvent && (
-            <>
-              {todayEvent
-                .map((cardevent) => {
-                  let address = `
-            ${cardevent.acf.rua}, 
-            ${cardevent.acf.numero} 
-            ${cardevent.acf.complemento} 
-            ${cardevent.acf.bairro}
-            `;
-                  let addressPlace = `
-            ${cardevent.acf.cidade} 
-            ${cardevent.acf.estado} 
-            `;
-                  return (
-                    <EventCard
-                      key={cardevent.id}
-                      eventid={cardevent.id}
-                      event={cardevent.acf.nome_do_evento}
-                      address={address}
-                      addressPlace={addressPlace}
-                      dayEvent={formatDate(cardevent.acf.data, "day")}
-                      monthEvent={formatDate(cardevent.acf.data, "month")}
-                      yearEvent={formatDate(cardevent.acf.data, "year")}
-                      hour={cardevent.acf.hora}
-                      status="today"
-                    />
-                  );
-                })
-                .reverse()}
-            </>
-          )}
-          <hr></hr>
-          <h2>Próximos eventos</h2>
-          {nextEvent
-            .map((cardevent) => {
+        <Header status="logado" idArtist={idArtist.id}></Header>
+        <HeroPage
+          title="Próximos eventos"
+          nameArtist="Michael Lenon"
+          idArtist={idArtist.id}
+        ></HeroPage>
+        <section className="list-events">
+          <Container>
+            {todayEvent && (
+              <>
+                {todayEvent
+                  .map((cardevent) => {
+                    let address = `
+                    ${cardevent.acf.rua}, 
+                    ${cardevent.acf.numero} 
+                    ${cardevent.acf.complemento} 
+                    ${cardevent.acf.bairro}
+                    `;
+                    let addressPlace = `
+                    ${cardevent.acf.cidade} 
+                    ${cardevent.acf.estado} 
+                    `;
+                    return (
+                      <EventCard
+                        key={cardevent.id}
+                        eventid={cardevent.id}
+                        event={cardevent.acf.nome_do_evento}
+                        address={address}
+                        addressPlace={addressPlace}
+                        dayEvent={formatDate(cardevent.acf.data, "day")}
+                        monthEvent={formatDate(cardevent.acf.data, "month")}
+                        yearEvent={formatDate(cardevent.acf.data, "year")}
+                        hour={cardevent.acf.hora}
+                        status="today"
+                      />
+                    );
+                  })
+                  .reverse()}
+              </>
+            )}
+            <hr></hr>
+            <h2>Próximos eventos</h2>
+            {nextEvent
+              .map((cardevent) => {
+                let address = `
+                ${cardevent.acf.rua}, 
+                ${cardevent.acf.numero} 
+                ${cardevent.acf.complemento} 
+                ${cardevent.acf.bairro}
+                `;
+                let addressPlace = `
+                ${cardevent.acf.cidade} 
+                ${cardevent.acf.estado} 
+                `;
+                return (
+                  <EventCard
+                    key={cardevent.id}
+                    eventid={cardevent.id}
+                    event={cardevent.acf.nome_do_evento}
+                    address={address}
+                    addressPlace={addressPlace}
+                    dayEvent={formatDate(cardevent.acf.data, "day")}
+                    monthEvent={formatDate(cardevent.acf.data, "month")}
+                    yearEvent={formatDate(cardevent.acf.data, "year")}
+                    hour={cardevent.acf.hora}
+                  />
+                );
+              })
+              .reverse()}
+            <hr></hr>
+            <h2>Eventos finalizados</h2>
+            {closeEvents.map((cardevent) => {
               let address = `
             ${cardevent.acf.rua}, 
             ${cardevent.acf.numero} 
@@ -103,40 +132,12 @@ export default function Dashboard() {
                   monthEvent={formatDate(cardevent.acf.data, "month")}
                   yearEvent={formatDate(cardevent.acf.data, "year")}
                   hour={cardevent.acf.hora}
+                  status="finish"
                 />
               );
-            })
-            .reverse()}
-          <hr></hr>
-          <h2>Eventos finalizados</h2>
-          {closeEvents.map((cardevent) => {
-            let address = `
-            ${cardevent.acf.rua}, 
-            ${cardevent.acf.numero} 
-            ${cardevent.acf.complemento} 
-            ${cardevent.acf.bairro}
-            `;
-            let addressPlace = `
-            ${cardevent.acf.cidade} 
-            ${cardevent.acf.estado} 
-            `;
-            return (
-              <EventCard
-                key={cardevent.id}
-                eventid={cardevent.id}
-                event={cardevent.acf.nome_do_evento}
-                address={address}
-                addressPlace={addressPlace}
-                dayEvent={formatDate(cardevent.acf.data, "day")}
-                monthEvent={formatDate(cardevent.acf.data, "month")}
-                yearEvent={formatDate(cardevent.acf.data, "year")}
-                hour={cardevent.acf.hora}
-                status="finish"
-              />
-            );
-          })}
-        </Container>
-      </section>
+            })}
+          </Container>
+        </section>
     </>
   );
 }

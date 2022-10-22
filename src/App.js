@@ -12,27 +12,33 @@ import EventPublic from "./pages/EventPublic";
 import ArtistAferEvent from "./pages/ArtistAferEvent";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import Context from "./funtions/Context";
 
 function App(props) {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/como-funciona" element={<About />} />
-          <Route path="/meus-dados" element={<MyCadastre />} />
-          <Route path="/dashboard/:id" element={<Dashboard />} />
-          <Route path="/novo-evento/:id" element={<InsertEvent />} />
-          <Route path="/dashboard/show-evento/:id" element={<EventArtist />} />
-          <Route path="/evento/:id" element={<EventPublic />} />
-          <Route
-            path="/dashboard/evento-realizado/:id"
-            element={<ArtistAferEvent />}
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer></Footer>
-      </BrowserRouter>
+      <Context.Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/como-funciona" element={<About />} />
+            <Route path="/evento/:id" element={<EventPublic />} />
+            <Route path="/meus-dados" element={<MyCadastre />} />
+            <Route path="/dashboard/:id" element={<Dashboard />} />
+            <Route path="/novo-evento/:id" element={<InsertEvent />} />
+            <Route
+              path="/dashboard/show-evento/:id"
+              element={<EventArtist />}
+            />
+            <Route
+              path="/dashboard/evento-realizado/:id"
+              element={<ArtistAferEvent />}
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer></Footer>
+        </BrowserRouter>
+      </Context.Provider>
     </>
   );
 }

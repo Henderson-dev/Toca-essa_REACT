@@ -15,13 +15,11 @@ export default function EventCard({
   status,
 }) {
   const [statusAction, setStatusAction] = useState("");
-  // const [message, setMessage] = useState("");
 
   // Define o caminho do endpoint de inserção de evento no back-end
   const routeAPI = rootPath + pathsApi[1].route;
 
   async function startEvent(idevent) {
-    console.log(routeAPI);
 
     // Inicia varial que vai armazenar os dados do formulário
     const dataEvent = new FormData();
@@ -36,13 +34,9 @@ export default function EventCard({
         console.log(response);
         if (response.status === 200) {
           setStatusAction("ok");
-          // setMessage("");
-          // timeMessage();
           window.location.href = "/dashboard/show-evento/" + idevent;
         } else {
           setStatusAction("erro");
-          // setMessage("");
-          // timeMessage();
         }
       });
     } catch (err) {

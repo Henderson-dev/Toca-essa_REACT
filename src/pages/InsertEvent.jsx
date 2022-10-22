@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FormNewEvent from "../components/FormNewEvent";
 import Header from "../components/Header";
 import HeroPage from "../components/HeroPage";
@@ -9,22 +9,25 @@ export default function InsertEvent() {
   // Pega o id do evento na url
   const { id } = useParams();
   const idArtist = { id };
-
   return (
     <>
-      <Header status="logado" dashboard="true" idArtist={idArtist.id}></Header>
-      <HeroPage
-        title="Novo Evento"
-        nameArtist="Michael Lenon"
-        goback={true}
-        idArtist={idArtist.id}
-      ></HeroPage>
-      <FormNewEvent></FormNewEvent>
-      <SetlistGroup
-        page="newevent"
-        title="Setlist do evento"
-        idArtist={idArtist.id}
-      ></SetlistGroup>
+        <Header
+          status="logado"
+          dashboard="true"
+          idArtist={idArtist.id}
+        ></Header>
+        <HeroPage
+          title="Novo Evento"
+          nameArtist="Michael Lenon"
+          goback={true}
+          idArtist={idArtist.id}
+        ></HeroPage>
+        <FormNewEvent></FormNewEvent>
+        <SetlistGroup
+          page="newevent"
+          title="Setlist do evento"
+          idArtist={idArtist.id}
+        ></SetlistGroup>
     </>
   );
 }

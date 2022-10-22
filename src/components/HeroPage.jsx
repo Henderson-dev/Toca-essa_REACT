@@ -22,8 +22,6 @@ export default function HeroPage({
   const routeAPI = rootPath + pathsApi[4].route;
 
   async function closeThisEvent(idevent) {
-    console.log(idevent);
-    console.log(routeAPI);
 
     // Inicia varial que vai armazenar os dados do formulário
     const dataEvent = new FormData();
@@ -38,18 +36,12 @@ export default function HeroPage({
         console.log(response);
         if (response.status === 200) {
           setStatusAction("ok");
-          // setMessage("");
-          // timeMessage();
           window.location.href = "/dashboard/evento-realizado/" + idevent;
         } else {
-          setStatusAction("erro");
-          // setMessage("");
-          // timeMessage();
         }
       });
     } catch (err) {
       setStatusAction("erro");
-      //console.log(err);
     }
   }
 
