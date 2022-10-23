@@ -7,6 +7,7 @@ import CardRequest from "../components/CardRequest";
 import MensageScreen from "../components/MensageScreen";
 import { Container, Row } from "react-bootstrap";
 import SetlistGroup from "../components/SetlistGroup";
+import GroupReceivedMessages from "../components/GroupReceivedMessages";
 
 export default function ArtistAferEvent() {
   // Pega o id do evento na url
@@ -79,8 +80,14 @@ export default function ArtistAferEvent() {
           idevento={id}
           dataSetlist={pageData.acf.lista_de_musicas_do_repertorio}
           page="artist"
-          title="Setlist de hoje"
+          title="Setlist do evento"
         ></SetlistGroup>
+      )}
+      {pageData.acf.lista_de_comentarios && (
+        <GroupReceivedMessages
+          dataMessages={pageData.acf.lista_de_comentarios}
+          title="Mensagens recebidas"
+        ></GroupReceivedMessages>
       )}
     </>
   );

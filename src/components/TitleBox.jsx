@@ -1,11 +1,23 @@
 import React from "react";
 
-export default function TitleBox({ title, bgcolor }) {
+export default function TitleBox({ title, bgcolor, position }) {
   return (
     <>
-      <div className={`box-title-hero-internal ${bgcolor}`}>
-        <h1>{title}</h1>
-      </div>
+      {position === "initial" ? (
+        <>
+          <div
+            className={`box-title-hero-internal position-initial ${bgcolor}`}
+          >
+            <h1>{title}</h1>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={`box-title-hero-internal ${bgcolor}`}>
+            <h1>{title}</h1>
+          </div>
+        </>
+      )}
     </>
   );
 }
