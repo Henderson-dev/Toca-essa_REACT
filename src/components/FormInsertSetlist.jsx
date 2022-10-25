@@ -4,17 +4,19 @@ import { Row } from "reactstrap";
 import EvenInsertFlahsCard from "./EvenInsertFlahsCard";
 import { rootPath, pathsApi } from "../backend/usePaths";
 import ScaleLoader from "react-spinners/ScaleLoader";
+import ModalNewEvent from "./ModalNewEvent";
+import generateRandomString from "../funtions/GenerateRadomCode";
 
-export default function FormInsertSetlist({idArtist}) {
-
-
-  console.log(idArtist);
+export default function FormInsertSetlist({ idArtist }) {
   const setlist = [];
   const [dataMusic, setDataMusic] = useState(setlist);
   const [music, setMusic] = useState();
   const [artist, setArtist] = useState();
   const [status, setStatus] = useState("");
   const [message, setMessage] = useState("");
+  const [modalShow, setModalShow] = useState(false);
+  const [EventNameCreate, SetEventName] = useState("");
+  const [codEvent, setCodEvent] = useState("");
 
   // Função apra deletar os cards da tela
   const deleteCard = (id) => {
@@ -72,6 +74,8 @@ export default function FormInsertSetlist({idArtist}) {
       document.querySelector("#nome_evento").value
     );
 
+    SetEventName(document.querySelector("#nome_evento").value);
+
     // Altera o formato da data para o formato brasileiro
     let dateEvent = document.querySelector("#date_evento").value;
     let dateFinal = `${dateEvent.substr(8, 2)}/${dateEvent.substr(
@@ -103,6 +107,10 @@ export default function FormInsertSetlist({idArtist}) {
     dataEvent.append("cidade", document.querySelector("#cidade").value);
     dataEvent.append("estado", document.querySelector("#estado").value);
 
+    // Gera o código do evento
+    setCodEvent(generateRandomString(10));
+    dataEvent.append("codigo_evento", codEvent);
+
     // Monta o setlist de músicas
     let countMusic = 0;
     dataMusic.map((datMusic, index) => {
@@ -124,7 +132,7 @@ export default function FormInsertSetlist({idArtist}) {
         if (response.status === 200) {
           setStatus("ok");
           setMessage("");
-          timeMessage();
+          //timeMessage();
         } else {
           setStatus("erro");
           setMessage("");
@@ -216,7 +224,12 @@ export default function FormInsertSetlist({idArtist}) {
       </div>
       <Row>
         <div className="col-12 text-center">
-          <span className="submit-event btn-white" onClick={()=>{submitEvent(idArtist)}}>
+          <span
+            className="submit-event btn-white"
+            onClick={() => {
+              submitEvent(idArtist);
+            }}
+          >
             Salvar evento
           </span>
 
@@ -232,6 +245,13 @@ export default function FormInsertSetlist({idArtist}) {
           </div>
         </div>
       </Row>
+      <ModalNewEvent
+        show={status === "ok" && (() => setModalShow(true))}
+        onHide={() => setModalShow(false)}
+        artist="Nome do Artista"
+        nameevent={EventNameCreate}
+        codevent={codEvent}
+      ></ModalNewEvent>
     </>
   );
 }
