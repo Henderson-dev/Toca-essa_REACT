@@ -32,6 +32,18 @@ export default function ArtistAferEvent() {
       <MensageScreen msg="Sem conexão com a API" error={error.response} />
     </>
   ) : (
+    // {
+    //   // let address = `
+    //   // ${pageData.acf.rua}, 
+    //   // ${pageData.acf.numero} 
+    //   // ${pageData.acf.complemento} 
+    //   // ${pageData.acf.bairro}
+    //   // `;
+    //   // let addressPlace = `
+    //   // ${pageData.acf.cidade} 
+    //   // ${pageData.acf.estado} 
+    //   // `;      
+    // }
     <>
       <Header
         status="logado"

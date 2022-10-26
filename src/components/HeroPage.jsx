@@ -68,11 +68,16 @@ export default function HeroPage({
                       {closeEvent === true && " realizado"}
                     </span>
                     <div className="box-info">
+                      <div className="box-date">
+                        <h2>
+                          {formatDate(dataEvent.data, "day")}{" "}
+                          {formatDate(dataEvent.data, "month")}
+                        </h2>
+                        <h3>{formatDate(dataEvent.data, "year")}</h3>
+                        <span>{dataEvent.hora} hs</span>
+                      </div>
                       <h3>{nameEvent}</h3>
-                      {formatDate(dataEvent.data, "day")}
-                      {formatDate(dataEvent.data, "month")}
-                      {formatDate(dataEvent.data, "year")}
-                      {dataEvent.hora} hs
+                      <p></p>
                     </div>
                   </div>
                   <div className="d-flex flex-column align-items-end justify-content-end">
