@@ -113,14 +113,19 @@ export default function EventInsertMusic({
       <section className="hero-do-music">
         <Container>
           <Row>
-            <div className="col-lg-4"></div>
+            <div className="col-lg-4">
+              <img
+                src="../../assets/images/logo_toca-essa-small.png"
+                alt="Toca Essa"
+              ></img>
+            </div>
             <div className="col-lg-7">
               <h1>Bem vindo</h1>
               <p>{enventname}</p>
               <div className="box-adress">
                 <h2>{placename}</h2>
                 <p>
-                  {address}, {addressnumber} {complement} {bairro} - {city} -{" "}
+                  {address}, {addressnumber} {complement} {bairro} • {city} -{" "}
                   {state}
                 </p>
               </div>
