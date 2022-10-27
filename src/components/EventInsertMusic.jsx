@@ -184,26 +184,25 @@ export default function EventInsertMusic({
           <Row>
             {data.length > 0 ? (
               <>
-            {data
-              .map((flashMusic, index) => {
-                return (
-                  <FlshCardMusic
-                    music={flashMusic.music}
-                    artist={flashMusic.artist}
-                    key={flashMusic.id}
-                    id={flashMusic.id}
-                    color={cardColor(index)}
-                  ></FlshCardMusic>
-                );
-              })
-              .reverse()}
+                {data
+                  .map((flashMusic, index) => {
+                    return (
+                      <FlshCardMusic
+                        music={flashMusic.music}
+                        artist={flashMusic.artist}
+                        key={flashMusic.id}
+                        id={flashMusic.id}
+                        color={cardColor(index)}
+                      ></FlshCardMusic>
+                    );
+                  })
+                  .reverse()}
               </>
-            ):(
+            ) : (
               <>
-              <h3>Você ainda não fez nenhum pedido!</h3>
+                <h3>Você ainda não fez nenhum pedido!</h3>
               </>
             )}
-
           </Row>
         </Container>
       </section>

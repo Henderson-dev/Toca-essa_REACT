@@ -39,16 +39,18 @@ export default function EventPublic() {
         </>
       ) : pageData.acf.evento_iniciar === true ? (
         <>
-          <EventInsertMusic 
-          idevento={id} 
-          enventname={pageData.acf.nome_do_evento}
-          placename={pageData.acf.nome_local}
-          address={pageData.acf.nome_local}
-          addressnumber={pageData.acf.nome_local}
-          bairro={pageData.acf.nome_local}
-          complement={pageData.acf.nome_local}
-          city={pageData.acf.nome_local}
-          state={pageData.acf.nome_local}
+          {console.log(pageData.acf.nome_estabelecimento)}
+          <EventInsertMusic
+            idevento={id}
+            enventname={pageData.acf.nome_do_evento}
+            placename={pageData.acf.nome_estabelecimento}
+            address={pageData.acf.rua}
+            addressnumber={pageData.acf.numero}
+            bairro={pageData.acf.nome_local}
+            complement={pageData.acf.complemento}
+            bairro={pageData.acf.bairro}
+            city={pageData.acf.cidade}
+            state={pageData.acf.estado}
           ></EventInsertMusic>
           <SetlistGroup
             idevento={id}

@@ -32,18 +32,6 @@ export default function ArtistAferEvent() {
       <MensageScreen msg="Sem conexão com a API" error={error.response} />
     </>
   ) : (
-    // {
-    //   // let address = `
-    //   // ${pageData.acf.rua}, 
-    //   // ${pageData.acf.numero} 
-    //   // ${pageData.acf.complemento} 
-    //   // ${pageData.acf.bairro}
-    //   // `;
-    //   // let addressPlace = `
-    //   // ${pageData.acf.cidade} 
-    //   // ${pageData.acf.estado} 
-    //   // `;      
-    // }
     <>
       <Header
         status="logado"
@@ -58,6 +46,8 @@ export default function ArtistAferEvent() {
         dataEvent={pageData.acf}
         goback={true}
         closeEvent={pageData.acf.evento_encerrado}
+        place={`${pageData.acf.nome_estabelecimento}`}
+        city={`${pageData.acf.cidade} / ${pageData.acf.estado}`}
       ></HeroPage>
       <section className="list-requests">
         <Container>

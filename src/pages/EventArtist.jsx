@@ -49,6 +49,8 @@ export default function EventArtist() {
         nameEvent={pageData.acf.nome_do_evento}
         dataEvent={pageData.acf}
         startEvent={pageData.acf.evento_iniciar}
+        place={`${pageData.acf.nome_estabelecimento}`}
+        city={`${pageData.acf.cidade} / ${pageData.acf.estado}`}        
       ></HeroPage>
       <section className="list-requests">
         <Container>

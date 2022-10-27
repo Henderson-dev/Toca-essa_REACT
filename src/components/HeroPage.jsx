@@ -14,6 +14,8 @@ export default function HeroPage({
   dataEvent,
   startEvent,
   closeEvent,
+  place,
+  city,
 }) {
   const [statusAction, setStatusAction] = useState("");
 
@@ -76,8 +78,11 @@ export default function HeroPage({
                         <h3>{formatDate(dataEvent.data, "year")}</h3>
                         <span>{dataEvent.hora} hs</span>
                       </div>
-                      <h3>{nameEvent}</h3>
-                      <p></p>
+                      <div className="box-place">
+                        <h3>{nameEvent}</h3>
+                        <h4>{place}</h4>
+                        <p>{city}</p>
+                      </div>
                     </div>
                   </div>
                   <div className="d-flex flex-column align-items-end justify-content-end">

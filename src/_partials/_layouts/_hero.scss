@@ -1,14 +1,14 @@
-.hero{
+.hero {
   position: relative;
   display: block;
   width: 100%;
   height: calc(100vh - 35px);
-  background: linear-gradient(246.13deg, #EC008C -44.06%, #472F92 81.88%);
+  background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  .col-center{
+  .col-center {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -17,21 +17,21 @@
     align-items: flex-end;
     width: 100%;
     height: calc(100vh - 45px);
-    .box-photos{
+    .box-photos {
       display: flex;
       width: 65vw;
       height: 95%;
       justify-content: center;
-      .logo-hero{
+      .logo-hero {
         margin-right: -200px;
         align-self: center;
       }
-      .photo-hero{
+      .photo-hero {
         height: 100%;
         align-self: flex-end;
       }
     }
-    .info{
+    .info {
       position: relative;
       height: 50vh;
       display: flex;
@@ -39,7 +39,7 @@
       align-items: flex-start;
       width: 400px;
       z-index: 10;
-      h1{
+      h1 {
         font-family: $font-titles;
         font-style: normal;
         font-weight: 700;
@@ -48,7 +48,7 @@
         color: $white;
         margin-bottom: 60px;
       }
-      .btn-white::after{
+      .btn-white::after {
         content: "";
         position: absolute;
         left: -85px;
@@ -56,12 +56,12 @@
         display: block;
         width: 80px;
         height: 145px;
-        background-image: url('../images/arrow-white.svg');
+        background-image: url("../images/arrow-white.svg");
         background-repeat: no-repeat;
       }
     }
   }
-  .box-blue{
+  .box-blue {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -72,7 +72,6 @@
     z-index: 1;
   }
 }
-
 /*
 =====================================================
 Small devices (landscape phones, 576px and up)
@@ -81,7 +80,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(sm) {
-
 }
 // 576px
 
@@ -93,7 +91,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(md) {
-  .hero{
+  .hero {
     height: calc(100vh - 52px);
   }
 }
@@ -107,7 +105,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(lg) {
-
 }
 
 // 992px
@@ -120,7 +117,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(xl) {
-
 }
 
 // 1200px

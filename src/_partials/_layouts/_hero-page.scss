@@ -125,6 +125,23 @@
           padding-bottom: 0;
         }
       }
+      .box-place {
+        color: $white;
+        h3{
+          margin-bottom: 12px;
+        }
+        h4{
+          font-style: normal;
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 120%;
+          margin-bottom: 1px;
+        }
+        p{
+          font-size: 12px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }
