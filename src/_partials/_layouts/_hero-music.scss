@@ -3,8 +3,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: url("../images/toca_esssa_bg_event_public.png") no-repeat 25px bottom, linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
+  background: url("../images/toca_esssa_bg_event_public.png") no-repeat 25px
+      bottom,
+    linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
+  // img {
+  //   align-self: center;
+  // }
   h1 {
     font-family: $font-titles;
     font-style: normal;

@@ -113,7 +113,7 @@ export default function EventInsertMusic({
       <section className="hero-do-music">
         <Container>
           <Row>
-            <div className="col-lg-4">
+            <div className="col-lg-4 d-flex justify-content-center align-items-start">
               <img
                 src="../../assets/images/logo_toca-essa-small.png"
                 alt="Toca Essa"
