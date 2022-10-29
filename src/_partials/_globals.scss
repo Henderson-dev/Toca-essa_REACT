@@ -146,6 +146,40 @@ ul {
 .show {
   display: block;
 }
+
+.color-pink {
+  background-color: #ec008c;
+}
+.color-purple {
+  background-color: #472f92;
+}
+.color-blue {
+  background-color: #2d97fa;
+}
+
+.list-events {
+  padding: 20px 0 30px;
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .group-events {
+    margin: 20px 0 60px;
+    .title-session {
+      padding: 16px 55px 16px 24px;
+      width: 254px;
+      margin-bottom: 8px;
+      h2 {
+        font-family: $font-titles;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 110%;
+        color: #ffffff;
+      }
+    }
+  }
+}
 /*
 =====================================================
 Small devices (landscape phones, 576px and up)
