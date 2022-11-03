@@ -1,0 +1,110 @@
+@mixin span-default($color: #3c80e5) {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: $color;
+  margin-bottom: 12px;
+}
+@mixin title-h2($color: #a0168f) {
+  font-family: $font-titles;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 110%;
+  color: $color;
+  margin-bottom: 29px;
+}
+@mixin paragraph($color: #000) {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: $color;
+  margin-bottom: 37px;
+}
+@mixin button($bg: #fff, $border: #a0168f) {
+  background: $bg;
+  border: 2px solid $border;
+  border-radius: 50px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  color: #a0168f;
+  text-decoration: none;
+  padding: 15px 0 18px;
+  max-width: 250px;
+  &:hover {
+    background-color: $pink;
+    color: #fff;
+    border: 2px solid $pink;
+  }
+}
+.for-public {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: auto;
+  .col-text {
+    grid-area: 1/1/1/2;
+    padding: 80px 90px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      @include span-default();
+    }
+    h2 {
+      @include title-h2();
+    }
+    p {
+      @include paragraph();
+    }
+    a {
+      @include button();
+    }
+  }
+  .col-image {
+    grid-area: 1/2/2/3;
+    background-color: $pink;
+    background-image: url("../images/guitarrista_toca-essa.png");
+    background-repeat: no-repeat;
+    min-height: 670px;
+    background-size: cover;
+  }
+}
+.for-artist {
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: auto;
+  background-color: #472f92;
+  .col-text {
+    grid-area: 1/2/2/3;
+    padding: 80px 90px 80px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span {
+      @include span-default(#fff);
+    }
+    h2 {
+      @include title-h2(#2d97fa);
+    }
+    p {
+      @include paragraph(#fff);
+    }
+    a {
+      @include button(#fff, #472f92);
+    }
+  }
+  .col-image {
+    grid-area: 1/1/1/2;
+    background-color: $purple;
+    background-image: url("../images/cantora_toca-essa.png");
+    background-repeat: no-repeat;
+    min-height: 620px;
+    background-size: cover;
+  }
+}
