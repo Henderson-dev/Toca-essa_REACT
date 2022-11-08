@@ -1,17 +1,21 @@
-header{
+header {
   display: block;
-  height: 35px;
+  height: 50px;
   background-color: $purple;
-  ul{
+  .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    li{
-      margin-right: 18px;
-      a{
+    li {
+      margin-right: 24px;
+      a {
         display: block;
-        height: 35px;
-        padding-top: 14px;
+        height: 50px;
+        padding-top: 16px;
         font-family: $font-default;
         font-style: normal;
         font-weight: 700;
@@ -21,20 +25,20 @@ header{
         letter-spacing: 0;
         text-transform: uppercase;
         text-decoration: none;
-        transition: all .2s ease-in-out;
-        &:hover{
+        transition: all 0.2s ease-in-out;
+        &:hover {
           color: $pink;
         }
       }
     }
-    li:last-child{
+    li:last-child {
       background-color: $pink;
       margin-right: 0;
-      a{
-        padding: 14px 20px 0 20px;
-        &:hover{
+      a {
+        padding: 17px 20px 0 20px;
+        &:hover {
           color: $purple;
-        }        
+        }
       }
     }
   }
@@ -48,25 +52,27 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(md) {
-
-  header{
+  header {
     height: 52px;
-    ul{
-      li{
+    .container {
+      padding-right: calc(var(--bs-gutter-x) * 0.5);
+      padding-left: calc(var(--bs-gutter-x) * 0.5);
+    }
+    ul {
+      li {
         margin-right: 77px;
-        a{
+        a {
           height: 52px;
           padding-top: 25px;
           font-size: 12px;
         }
       }
-      li:last-child{
-        a{
-          padding: 25px 74px 0 74px;       
+      li:last-child {
+        a {
+          padding: 25px 74px 0 74px;
         }
       }
     }
   }
-
 }
 // 768px

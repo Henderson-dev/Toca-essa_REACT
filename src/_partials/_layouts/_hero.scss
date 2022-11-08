@@ -2,7 +2,7 @@
   position: relative;
   display: block;
   width: 100%;
-  height: calc(100vh - 35px);
+  height: calc(65vh - 35px);
   background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
   display: flex;
@@ -13,22 +13,28 @@
     bottom: 0;
     right: 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-end;
     width: 100%;
-    height: calc(100vh - 45px);
+    height: calc(65vh - 45px);
     .box-photos {
       display: flex;
-      width: 65vw;
+      flex-direction: column;
+      width: 100vw;
       height: 95%;
       justify-content: center;
       .logo-hero {
-        margin-right: -200px;
-        align-self: center;
+        width: 50%;
+        position: absolute;
+        left: 5%;
+        top: 20px;
       }
       .photo-hero {
-        height: 100%;
-        align-self: flex-end;
+        position: absolute;
+        width: 60%;
+        height: auto;
+        top: 3px;
+        right: 0;
       }
     }
     .info {
@@ -36,27 +42,27 @@
       height: 50vh;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      width: 400px;
+      align-items: center;
+      width: 80%;
       z-index: 10;
       h1 {
         font-family: $font-titles;
         font-style: normal;
         font-weight: 700;
-        font-size: 55px;
+        font-size: 35px;
         line-height: 110%;
         color: $white;
-        margin-bottom: 60px;
+        margin-bottom: 20px;
       }
       .btn-white::after {
         content: "";
         position: absolute;
-        left: -85px;
-        top: -55px;
+        left: -50px;
+        top: -14px;
         display: block;
-        width: 80px;
-        height: 145px;
-        background-image: url("../images/arrow-white.svg");
+        width: 55px;
+        height: 100px;
+        background-image: url("../images/arrow_hero_mobile.svg");
         background-repeat: no-repeat;
       }
     }
@@ -66,10 +72,11 @@
     right: 0;
     bottom: 0;
     display: block;
-    width: 30%;
-    height: 65%;
+    width: 65%;
+    height: 55%;
     background-color: $secondary;
     z-index: 1;
+    opacity: 0.8;
   }
 }
 /*
@@ -93,6 +100,75 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 @include media-breakpoint-up(md) {
   .hero {
     height: calc(100vh - 52px);
+    .col-center {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
+      width: 100%;
+      height: calc(100vh - 45px);
+      .box-photos {
+        display: flex;
+        flex-direction: row;
+        width: 65vw;
+        height: 95%;
+        justify-content: center;
+        .logo-hero {
+          margin-right: -200px;
+          align-self: center;
+          width: initial;
+          position: initial;
+        }
+        .photo-hero {
+          height: 100%;
+          align-self: flex-end;
+          position: initial;
+          width: initial;
+          height: auto;
+        }
+      }
+      .info {
+        position: relative;
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 400px;
+        z-index: 10;
+        h1 {
+          font-family: $font-titles;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 55px;
+          line-height: 110%;
+          color: $white;
+          margin-bottom: 60px;
+        }
+        .btn-white::after {
+          content: "";
+          position: absolute;
+          left: -85px;
+          top: -55px;
+          display: block;
+          width: 80px;
+          height: 145px;
+          background-image: url("../images/arrow-white.svg");
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .box-blue {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      display: block;
+      width: 30%;
+      height: 65%;
+      background-color: $secondary;
+      z-index: 1;
+    }
   }
 }
 // 768px
