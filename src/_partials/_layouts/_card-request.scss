@@ -1,5 +1,5 @@
 .group-request {
-  padding: 78px 15px 100px;
+  padding: 78px 15px 150px;
   .container {
     position: relative;
     .box-title-hero {
@@ -13,7 +13,7 @@
         font-family: $font-titles;
         font-style: normal;
         font-weight: 700;
-        font-size: 28px;
+        font-size: 21px;
         line-height: 110%;
         color: #ffffff;
       }
@@ -109,5 +109,18 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
     .card-request {
       padding: 20px 25px;
     }
+    .container {
+      position: relative;
+      .box-title-hero {
+        left: 8px;
+        top: -120px;
+        padding: 16px 55px 16px 24px;
+        width: 254px;
+        h1 {
+          font-size: 28px;
+        }
+      }
+    }
+
   }
 }

@@ -3,7 +3,7 @@
   .box-title-hero-internal {
     position: absolute;
     left: 8px;
-    top: -120px;
+    top: -100px;
     background-color: #2d97fa;
     padding: 16px 55px 16px 24px;
     width: 254px;
@@ -11,9 +11,10 @@
       font-family: $font-titles;
       font-style: normal;
       font-weight: 700;
-      font-size: 28px;
+      font-size: 21px;
       line-height: 110%;
       color: #ffffff;
+      padding-right: 15%;
     }
   }
   .pink {
@@ -31,5 +32,43 @@
     top: 0;
     margin-bottom: 15px;
     margin-left: -6px;
+  }
+}
+
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .container {
+    position: relative;
+    .box-title-hero-internal {
+      position: absolute;
+      left: 8px;
+      top: -120px;
+      background-color: #2d97fa;
+      padding: 16px 55px 16px 24px;
+      width: 254px;
+      h1 {
+        font-family: $font-titles;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 110%;
+        color: #ffffff;
+      }
+    }
+    .pink {
+      background-color: $pink;
+    }
+    .blue {
+      background-color: $secondary;
+    }
+    .purple {
+      background-color: $purple;
+    }
   }
 }
