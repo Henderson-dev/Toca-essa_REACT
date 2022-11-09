@@ -1,5 +1,5 @@
 .setlist-group {
-  padding: 93px 0;
+  padding: 40px 15px;
   background: linear-gradient(246.13deg, #ec008c -44.06%, #472f92 81.88%);
   mix-blend-mode: normal;
 
@@ -38,21 +38,21 @@
   }
 
   .card-setlist {
-    padding: 16px 25px;
+    padding: 13px 15px;
     background: rgba(251, 251, 251, 0.1);
     margin-bottom: 15px;
     h2 {
       font-style: normal;
       font-weight: 400;
-      font-size: 24px;
-      line-height: 28px;
+      font-size: 18px;
+      line-height: 120%;
       color: #ffffff;
     }
     span {
       font-style: normal;
       font-weight: 700;
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 16px;
+      line-height: 120%;
       color: #ffffff;
     }
     .box-feedback {
@@ -156,6 +156,66 @@
         }
         &:hover svg path {
           fill: $white;
+        }
+      }
+    }
+  }
+}
+/*
+=====================================================
+Medium devices (tablets, 768px and up)
+Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpoints
+=====================================================
+*/
+
+@include media-breakpoint-up(md) {
+  .setlist-group {
+    padding: 93px 0;
+    .card-setlist {
+      padding: 16px 25px;
+      background: rgba(251, 251, 251, 0.1);
+      margin-bottom: 15px;
+      h2 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #ffffff;
+      }
+      span {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #ffffff;
+      }
+      .box-feedback {
+        span {
+          cursor: pointer;
+          margin-bottom: 4px;
+          svg path {
+            &:hover {
+              fill: $primary;
+              stroke: $primary;
+            }
+          }
+        }
+      }
+      .set-like path {
+        fill: $primary;
+        stroke: $primary;
+      }
+      .set-unlike path {
+        fill: $primary;
+        stroke: $primary;
+      }
+      .box-like,
+      .box-unlike {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        span:first-child {
+          margin-right: 10px;
         }
       }
     }

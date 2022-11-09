@@ -70,7 +70,7 @@ export default function Footer() {
                 Belo Horizonte, MG - Brasil
               </p>
             </div>
-            <div className="col-lg-4 d-flex justify-content-end">
+            <div className="col-lg-4 d-flex justify-content-center justify-content-lg-end">
               <ul className="d-flex">
                 <li>
                   <a href="#">Aviso de Privacidade</a>

@@ -1,7 +1,6 @@
 /* Footer */
-
 footer {
-  padding: 55px 0 0 0;
+  padding: 25px 25px 5px;
   background-color: $secondary;
   color: #fff;
   h2 {
@@ -42,8 +41,11 @@ footer {
     }
   }
   .list-social {
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 25px;
     li {
-      margin-left: 60px;
+      margin-left: 0;
       a {
         transition: all 0.2s ease-in-out;
         &:hover {
@@ -53,21 +55,23 @@ footer {
     }
   }
   .credits {
-    margin-top: 40px;
-    height: 65px;
+    margin-top: 30px;
+    height: auto;
     p {
       font-style: normal;
       font-weight: 400;
-      font-size: 15px;
+      font-size: 12px;
       line-height: 150%;
       color: #ffffff;
+      margin-bottom: 30px;
+      text-align: center;
     }
     a {
       font-family: $font-default;
       font-style: normal;
       font-weight: 400;
-      font-size: 15px;
-      line-height: 150%;
+      font-size: 12px;
+      line-height: 120%;
       color: #ffffff;
       text-transform: initial;
     }
@@ -100,6 +104,35 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(md) {
+  footer {
+    padding: 55px 0 0 0;
+    .list-social {
+      justify-content: inherit;
+      margin-top: 0;
+      li {
+        margin-left: 60px;
+        a {
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+    .credits {
+      margin-top: 40px;
+      height: 65px;
+      p {
+        font-size: 15px;
+        margin-bottom: inherit;
+        text-align: left;
+      }
+      a {
+        font-size: 15px;
+        line-height: 150%;
+      }
+    }
+  }
 }
 
 // 768px
