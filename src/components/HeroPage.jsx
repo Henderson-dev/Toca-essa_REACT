@@ -54,7 +54,7 @@ export default function HeroPage({
       <section className="hero-page">
         <Container>
           <Row>
-            <div className="col-md-3">
+            <div className="col-4 col-md-3">
               <img
                 src="../../assets/images/logo_toca-essa-small.png"
                 alt="Toca Essa"
@@ -63,7 +63,7 @@ export default function HeroPage({
             </div>
             {nameEvent ? (
               <>
-                <div className="col-md-9 d-flex flex-row align-items-end justify-content-end">
+                <div className="col-8 col-md-9 d-flex flex-row align-items-end justify-content-end">
                   <div className="box-event-data">
                     <span>
                       Evento{startEvent === true && " em andamento"}
@@ -128,7 +128,7 @@ export default function HeroPage({
               </>
             ) : (
               <>
-                <div className="col-md-9 d-flex flex-column align-items-end justify-content-end">
+                <div className="col-8 col-md-9 d-flex flex-column align-items-end justify-content-end">
                   <h2>Bem vindo</h2>
                   <span>{nameArtist}</span>
                   {goback === true ? (
