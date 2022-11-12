@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { differenceInHours } from "date-fns";
 import ModalCommentEvent from "./ModalCommentEvent";
+import { Container, Row } from "reactstrap";
 
 export default function EventClosed({
   artist,
@@ -32,11 +33,17 @@ export default function EventClosed({
   return (
     <>
       <section className="event-close">
-        <h1>{artist}</h1>
-        <h2>{event}</h2>
-        <span>data: {datevent}</span>
-        <span>hora: {hourevent}</span>
-        <h3>Evento encerrado</h3>
+        <Container>
+          <Row>
+            <div className="col-12 text-center">
+              <h1>{artist}</h1>
+              <h2>{event}</h2>
+              <span>data: {datevent}</span>
+              <span>hora: {hourevent}</span>
+              <h3>Evento encerrado</h3>
+            </div>
+          </Row>
+        </Container>
       </section>
       <ModalCommentEvent
         show={commetEvent === 1 && (() => setModalShow(true))}

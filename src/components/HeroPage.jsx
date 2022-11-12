@@ -40,7 +40,8 @@ export default function HeroPage({
         console.log(response);
         if (response.status === 200) {
           setStatusAction("ok");
-          window.location.href = "/dashboard/evento-realizado/" + idevent;
+          window.location.href =
+            "/dashboard/evento-realizado/" + idevent + "/?status=encerrado";
         } else {
         }
       });

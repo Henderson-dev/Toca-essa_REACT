@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import HeroPage from "../components/HeroPage";
@@ -8,8 +8,11 @@ import MensageScreen from "../components/MensageScreen";
 import { Container, Row } from "react-bootstrap";
 import SetlistGroup from "../components/SetlistGroup";
 import GroupReceivedMessages from "../components/GroupReceivedMessages";
+import ModalEventClosed from "../components/ModalEventClosed";
 
 export default function ArtistAferEvent() {
+  const [modalShow, setModalShow] = useState(false);
+
   // Pega o id do evento na url
   const { id } = useParams();
   const idEvent = { id };
@@ -19,6 +22,10 @@ export default function ArtistAferEvent() {
   let pathApiData = "evento/" + idEvent.id;
   let dataFromPage = "wp-json/wp/v2/" + pathApiData;
   const { data: pageData, error, isLoad } = useFetch(dataFromPage);
+
+  // Pega parametro na url para identificar que o evento acabou de ser encerrado
+  const urlParams = new URLSearchParams(window.location.search);
+  const closedEvent = urlParams.get("status");
 
   return isLoad === true ? ( // Aguardando carregamento
     <>
@@ -49,6 +56,11 @@ export default function ArtistAferEvent() {
         place={`${pageData.acf.nome_estabelecimento}`}
         city={`${pageData.acf.cidade} / ${pageData.acf.estado}`}
       ></HeroPage>
+      <ModalEventClosed
+        show={closedEvent === "encerrado" && (() => setModalShow(true))}
+        onHide={() => setModalShow(false)}
+        eventName={pageData.acf.nome_do_evento}
+      ></ModalEventClosed>
       <section className="list-requests">
         <Container>
           <Row className="d-flex list-request">
