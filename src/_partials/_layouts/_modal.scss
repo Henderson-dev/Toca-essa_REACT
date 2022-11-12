@@ -8,7 +8,30 @@
     line-height: 110%;
     color: $primary;
     padding-right: 0;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+  }
+  h3{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;    
+  }
+  .list-public {
+    margin: 20px 0 40px;
+    li {
+      margin-bottom: 12px;
+      list-style: disc;
+      a {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-decoration: none;
+        color: $primary;
+        transition: all .2s ease-in-out;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
   }
   .list-login {
     display: flex;
@@ -77,7 +100,7 @@
 }
 .modal-header {
   padding: 10px;
-  border-bottom: none;
+  border-bottom: none !important;
 }
 /*
 =====================================================
@@ -93,7 +116,6 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
       font-size: 42px;
       color: $primary;
       padding-right: 40%;
-      margin-bottom: 40px;
     }
     .list-login {
       justify-content: space-around;

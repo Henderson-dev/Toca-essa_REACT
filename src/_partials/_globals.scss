@@ -64,6 +64,33 @@ ul {
   text-decoration: none;
 }
 
+
+.btn-purple{
+  background: $primary;
+  margin-top: 15px;
+  border: none;
+  display: block;
+  width: fit-content;
+  min-width: 129px;
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  color: $white;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+  padding: 10px 16px;
+  border: 2px solid $primary;
+  border-radius: 50px;
+  &:hover {
+    background-color: $pink;
+    color: $white;
+    border: 2px solid $pink;
+  }    
+}
+
 .submit-event {
   display: block;
   height: 61px;

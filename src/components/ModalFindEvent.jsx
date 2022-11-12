@@ -28,33 +28,38 @@ export default function ModalFindEvent(props) {
 
         {showGeoloc === 1 ? (
           <>
-            <h3>Pela geolocalização</h3>
-            {pageData.map((event) => {
-              return (
-                <>
-                  <ul>
-                    <li key={event.id}>
-                      <Link to={`/evento/${event.id}`}>{event.acf.nome_do_evento}</Link>
-                    </li>
-                  </ul>
-                </>
-              );
-            })}
-            <button onClick={() => setshowGeoloc(0)} className="btn-default">
+            <h3>Selecione um evento:</h3>
+            <ul className="list-public">
+              {pageData.map((event, index) => {
+                // exibe apenas o último evento
+                if (index === 0) {
+                  return (
+                    <>
+                      <li key={event.id}>
+                        <Link to={`/evento/${event.id}`}>
+                          {event.acf.nome_do_evento}
+                        </Link>
+                      </li>
+                    </>
+                  );
+                }
+              })}
+            </ul>
+            <button onClick={() => setshowGeoloc(0)} className="btn-purple">
               Voltar
             </button>
           </>
         ) : showCod === 1 ? (
           <>
             Codigo
-            <button onClick={() => setshowCod(0)} className="btn-default">
+            <button onClick={() => setshowCod(0)} className="btn-purple">
               Voltar
             </button>
           </>
         ) : showArtist === 1 ? (
           <>
             Artista
-            <button onClick={() => setshowArtist(0)} className="btn-default">
+            <button onClick={() => setshowArtist(0)} className="btn-purple">
               Voltar
             </button>
           </>

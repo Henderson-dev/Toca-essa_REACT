@@ -164,7 +164,7 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
       right: 0;
       bottom: 0;
       display: block;
-      width: 30%;
+      width: 24%;
       height: 65%;
       background-color: $secondary;
       z-index: 1;
@@ -181,6 +181,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
 */
 
 @include media-breakpoint-up(lg) {
+  .hero {
+    .box-blue {
+      width: 26%;
+    }
+  }
+
 }
 
 // 992px
