@@ -17,6 +17,22 @@
       padding-right: 15%;
     }
   }
+  .box-internal-bottom {
+    position: relative;
+    background-color: #2d97fa;
+    padding: 16px 55px 16px 24px;
+    width: 254px;
+    margin-bottom: 15px;
+    h1 {
+      font-family: $font-titles;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 110%;
+      color: #ffffff;
+      padding-right: 15%;
+    }    
+  }
   .pink {
     background-color: $pink;
   }
@@ -61,6 +77,12 @@ Read more: https://getbootstrap.com/docs/4.6/layout/overview/#responsive-breakpo
         color: #ffffff;
       }
     }
+    .box-internal-bottom {
+      h1 {
+        font-weight: 700;
+        font-size: 28px;
+      }    
+    }    
     .pink {
       background-color: $pink;
     }

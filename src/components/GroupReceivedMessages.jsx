@@ -34,7 +34,7 @@ export default function GroupReceivedMessages({ dataMessages, title }) {
             <TitleBox
               title={title}
               bgcolor="purple"
-              position="initial"
+              position="bottom"
             ></TitleBox>
             {dataMessages.map((messages, index) => { return (
                 <CardReceivedMessages

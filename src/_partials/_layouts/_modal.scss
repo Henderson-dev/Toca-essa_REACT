@@ -52,6 +52,20 @@
       }
     }
   }
+  .msg-modal{
+    display: block;
+    width: 100%;
+    background: rgba(45,151,250,.1);
+    padding: 25px 16px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    p {
+      margin-bottom: 0;
+    }
+  }
   .modal-event {
     h2 {
       margin-bottom: 15px;

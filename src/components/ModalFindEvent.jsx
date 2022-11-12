@@ -28,11 +28,11 @@ export default function ModalFindEvent(props) {
 
         {showGeoloc === 1 ? (
           <>
-            <h3>Selecione um evento:</h3>
+            <h3>Selecione um evento</h3>
             <ul className="list-public">
               {pageData.map((event, index) => {
                 // exibe apenas o último evento
-                if (index === 0) {
+                if (index >= 0 && index < 2) {
                   return (
                     <>
                       <li key={event.id}>

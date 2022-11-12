@@ -11,6 +11,12 @@ export default function TitleBox({ title, bgcolor, position }) {
             <h1>{title}</h1>
           </div>
         </>
+      ) : position === "bottom" ? (
+        <>
+          <div className={`box-internal-bottom ${bgcolor}`}>
+            <h1>{title}</h1>
+          </div>
+        </>
       ) : (
         <>
           <div className={`box-title-hero-internal ${bgcolor}`}>
