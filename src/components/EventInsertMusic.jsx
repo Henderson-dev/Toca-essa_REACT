@@ -43,6 +43,7 @@ export default function EventInsertMusic({
     const data = new FormData(form.current);
     //form.submit();
     setMessage("loading");
+    setStatus("");
     try {
       let res = await fetch(routeAPI, {
         method: "POST",
@@ -163,7 +164,7 @@ export default function EventInsertMusic({
                       className="form-right"
                     />
                   </div>
-                  <div className="box-mensage">
+                  <div className="box-mensage-music">
                     {message === "loading" && (
                       <div className="box-msg">
                         <ScaleLoader color="#ffffff" height={30} />
